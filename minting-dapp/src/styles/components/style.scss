@@ -1,0 +1,85 @@
+.landing {
+  @apply flex;
+  @apply w-full;
+  @apply min-h-screen;
+  @apply bg-ucyellow;
+
+  //sidebar
+  .sidebar {
+    @apply flex flex-col;
+    @apply w-[290px];
+    @apply p-4;
+  }
+
+  .logo {
+    @apply px-8 mt-8;
+
+    img {
+      @apply block w-full;
+    }
+  }
+
+  .nav-list {
+    @apply flex flex-col items-center;
+    @apply mt-14;
+   
+    a {
+      @apply text-black no-underline hover:text-ucblue;
+      @apply px-3 py-1;
+    }
+  }
+
+  .social-media {
+    @apply flex flex-col items-center;
+    @apply mt-16;
+
+    a {
+      @apply p-2;
+    }
+
+    img {
+      @apply w-[33px];
+    }
+  }
+
+  //description
+  &-body {
+    @apply w-[610px];
+    @apply mt-28;
+
+    .landing-description {
+      @apply mt-10;
+    }
+
+    h1 {
+      @apply w-[400px];
+      @apply text-8xl leading-tight;
+    }
+
+    .desc-large {
+      @apply text-2xl;
+      @apply mt-2;
+    }
+
+    .desc-small {
+      @apply text-base;
+      @apply mt-3;
+    }
+
+    .landing-cta {
+      @apply flex mt-9;
+
+      .button {
+        @apply flex items-center justify-items-center;
+        @apply mr-4 text-black text-xl no-underline;
+        @apply hover:text-white hover:bg-ucblue hover:border-ucblue;
+        @apply border-2 border-black rounded-full;
+        @apply px-10 py-4;
+
+        img {
+          @apply h-[24px] mr-3; 
+        }
+      }
+    }
+  }
+}
