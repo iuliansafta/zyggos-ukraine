@@ -1,8 +1,9 @@
+// landing #1
 .landing {
-  @apply flex;
-  @apply w-full;
-  @apply min-h-screen;
+  @apply flex w-full;
+  @apply relative overflow-hidden;
   @apply bg-ucyellow;
+  @apply pb-24;
 
   //sidebar
   .sidebar {
@@ -81,5 +82,129 @@
         }
       }
     }
+  }
+
+  .landing-secondary-desc {
+    @apply mt-14;
+  }
+
+  .landing-unite {
+    @apply flex flex-col items-center justify-items-center;
+    @apply pt-[628px] pl-[145px];
+    @apply relative;
+
+    .desc {
+      @apply w-[184px];
+      @apply text-center;
+
+      h3 {
+        @apply text-5xl;
+      }
+    }
+  }
+
+  &-hero {
+    @apply absolute;
+    @apply top-[22px] left-[-170px];
+    @apply w-[730px];
+  }
+
+  &-atom {
+    @apply absolute;
+    @apply -z-10;
+    @apply top-[523px] left-[1309px];
+  }
+  &-dots-r {
+    @apply absolute;
+    @apply -z-10;
+    @apply top-[289px] right-[18px];
+  }
+
+  &-dots-l {
+    @apply absolute;
+    @apply -z-10;
+    @apply bottom-[100px] left-[70px];
+  }
+}
+
+//meet #2
+.meet {
+  @apply pt-[150px] pb-[100px] px-[20px];
+  @apply overflow-hidden relative;
+
+  .desc {
+    @apply flex;
+
+    &-img {
+      @apply min-w-[600px];
+    }
+
+    &-body {
+      @apply pl-[42px] pt-[294px];
+
+      h3 {
+        @apply text-[40px] mt-[20px];
+      }
+
+      p {
+        @apply text-grey text-2xl mt-10;
+      }
+    }
+  }
+
+  .container > p {
+    @apply text-grey text-lg mt-10;
+  }
+
+  &-star {
+    @apply absolute;
+    @apply -z-10;
+    @apply left-[74px] top-[584px];
+  }
+
+  &-moon {
+    @apply absolute;
+    @apply -z-10;
+    @apply right-[105px] top-[120px];
+  }
+
+  &-dots-r {
+    @apply absolute;
+    @apply -z-10;
+    @apply right-[110px] bottom-[123px];
+  }
+}
+
+//motive #3
+
+.motive {
+  @apply relative overflow-hidden;
+  @apply pt-[100px] pb-[80px] px-[20px];
+
+  h3 {
+    @apply text-[40px] mt-[20px];
+  }
+
+  &-cols {
+    @apply flex -mx-[20px] mt-[40px];
+    @apply mt-[40];
+
+    > div {
+      @apply px-[20px] w-full;
+    }
+
+    h4 {
+      @apply text-2xl;
+    }
+
+    p {
+      @apply mt-[20px] text-grey text-lg;
+    }
+  }
+
+  &-dots {
+    @apply absolute;
+    @apply -z-10;
+    @apply left-[50%] -ml-[75px] bottom-[0px]; 
   }
 }

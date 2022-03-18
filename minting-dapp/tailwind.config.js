@@ -10,6 +10,7 @@ module.exports = {
     colors: {
       ucyellow: '#FFE200',
       ucblue: '#035AB9',
+      grey: '#707070',
       popupsbg: colors.white,
       neutral: colors.slate,
       primary: colors.indigo,

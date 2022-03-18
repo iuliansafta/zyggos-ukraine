@@ -4,7 +4,7 @@ body {
   
   @apply font-varela;
   @apply text-warningtxt;
-  @apply bg-gradient-to-b from-neutral-100 via-neutral-100 to-neutral-200;
+  @apply bg-white from-neutral-100 via-neutral-100 to-neutral-200;
 }
 
 a, a:link, a:visited {
@@ -140,4 +140,9 @@ label {
 .web-tag {
   @apply text-xs text-white rounded-3xl uppercase bg-black inline-block;
   @apply px-4 py-1;
+}
+
+.container {
+  @apply mx-auto;
+  @apply max-w-[1100px];
 }
