@@ -208,3 +208,57 @@
     @apply left-[50%] -ml-[75px] bottom-[0px]; 
   }
 }
+
+//manifesto #4
+
+.manifesto {
+  @apply relative overflow-hidden;
+  @apply pt-[80px] pb-[100px] px-[20px];
+
+  h3 {
+    @apply text-[40px] mt-[20px];
+  }
+
+  span {
+    @apply text-lg;
+  }
+
+  &-pose {
+    @apply mt-[30px] px-[40px] -mx-[10px];
+    @apply flex flex-wrap;
+
+    > div {
+      @apply w-[240px] h-[240px] m-[10px];
+
+      &:nth-child(2) {
+        @apply bg-card1;
+      }
+
+      &:nth-child(4) {
+        @apply bg-card2;
+      }
+
+      &:nth-child(9) {
+        @apply bg-card3;
+      }
+
+      &:nth-child(11) {
+        @apply bg-card4;
+      }
+
+      &.manifesto-text {
+        @apply px-[30px] rounded-[30px];
+        @apply text-white text-2xl text-center;
+        @apply flex items-center justify-center;
+      }
+      
+      &.large-box {
+        @apply w-[500px] h-[316px] flex flex-col;
+
+        span {
+          @apply block mt-[40px] whitespace-pre-wrap;
+        }
+      }
+    }
+  }
+}
