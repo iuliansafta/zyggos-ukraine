@@ -1,5 +1,6 @@
 import Dapp from './Dapp'
 import Faq from './Faq'
+import Footer from './Footer'
 import Landing from './Landing'
 import Manifesto from './Manifesto'
 import Meet from './Meet'
@@ -19,7 +20,8 @@ function App() {
       <Metastory />
       <Roadmap />
       <Faq />
-      <Dapp />
+      <Footer />
+      {/* <Dapp /> */}
     </div>
   )
 }

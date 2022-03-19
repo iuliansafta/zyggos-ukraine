@@ -127,7 +127,7 @@
   }
 }
 
-//meet #2
+// meet #2
 .meet {
   @apply pt-[150px] pb-[100px] px-[20px];
   @apply overflow-hidden relative;
@@ -175,8 +175,7 @@
   }
 }
 
-//motive #3
-
+// motive #3
 .motive {
   @apply relative overflow-hidden;
   @apply pt-[100px] pb-[80px] px-[20px];
@@ -209,8 +208,7 @@
   }
 }
 
-//manifesto #4
-
+// manifesto #4
 .manifesto {
   @apply relative overflow-hidden;
   @apply pt-[80px] pb-[200px] px-[20px];
@@ -364,7 +362,6 @@
 }
 
 // metastory #6
-
 .metastory {
   @apply relative overflow-hidden;
   @apply bg-no-repeat bg-metastory-bg bg-cover;
@@ -512,5 +509,105 @@
     @apply absolute;
     @apply -z-10;
     @apply bottom-[80px] right-[375px];
+  }
+}
+
+// faq #8
+.faq {
+  @apply relative overflow-hidden;
+  @apply pt-[30px] pb-[240px] px-[20px];
+
+  h3 {
+    @apply text-[40px] mt-[20px];
+  }
+
+  .subtitle {
+    @apply text-2xl mt-[30px];
+  }
+
+  .accordion {
+    @apply mt-[45px];
+
+    &-button {
+      @apply shadow-none text-2xl text-grey relative flex;
+      @apply items-center w-full py-[20px] px-[30px] text-left;
+      @apply bg-[#E3F1FD] border-0 rounded-none transition focus:outline-none;
+
+      &:not(.collapsed) {
+        @apply text-grey bg-white;
+      }
+    }
+
+    &-body {
+      @apply py-[20px] px-[30px] bg-[#E3F1FD] text-grey text-lg;
+    }
+
+    &-item {
+      @apply border-0 rounded-none bg-white mb-[10px];
+
+      &:first-of-type,
+      &:last-of-type {
+        .accordion-button {
+          @apply rounded-none;
+        }
+      }
+    }
+  }
+
+  &-flame {
+    @apply absolute;
+    @apply -z-10;
+    @apply bottom-[146px] right-[85px];
+  }
+}
+
+// footer #9
+.footer {
+  @apply pt-[60px] pb-[80px] bg-[#7A838B] text-white;
+  
+  .container {
+    @apply flex;
+  }
+
+  .media {
+    h3 {
+      @apply text-2xl;
+    }
+  
+    .social-media {
+      @apply flex mt-[16px];
+  
+      a {
+        @apply mr-[16px];
+      }
+    }
+  
+    p {
+      @apply text-lg mt-[30px];
+    }
+  
+    .terms {
+      @apply text-lg inline-block mt-[30px] no-underline text-white hover:text-ucblue hover:no-underline;
+    }
+  
+    span {
+      @apply text-lg block mt-[50px];
+    }
+  }
+
+  .verified {
+    @apply flex items-end flex-col text-right text-lg;
+
+    .logo {
+      @apply max-w-[225px];
+    }
+
+    p {
+      @apply mt-[30px];
+    }
+
+    span {
+      @apply block mt-[109px];
+    }
   }
 }

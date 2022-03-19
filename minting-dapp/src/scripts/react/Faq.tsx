@@ -1,152 +1,90 @@
+import 'tw-elements'
+const faqData = [
+  {
+    title: 'What is the mission of the project?',
+    body: 'Lorem ipsum dolor',
+    id: 'faq1',
+  },
+  {
+    title: 'What is the metaverse?',
+    body: 'Lorem ipsum dolor',
+    id: 'faq2',
+  },
+  {
+    title: 'Where can I mint (buy) and view my Zyggo Distrikt NFT? ',
+    body: 'Lorem ipsum dolor',
+    id: 'faq3',
+  },
+  {
+    title: 'How can I use my NFT?',
+    body:
+      'You can use it as an avatar in the Metaverse and in our upcoming digital environments. Holding it means you are a part of exclusive community of sharp crypto investors. You can also get cool prints of your Zyggos (NFTs are 3000x3000px, 72dpi = 720x720px, 300dpi).',
+    id: 'faq4',
+  },
+  {
+    title: 'How do we know the NFT money is donated? ',
+    body: 'Lorem ipsum dolor',
+    id: 'faq5',
+  },
+  {
+    title: 'How can I help the cause for Ukraine?  ',
+    body: 'Lorem ipsum dolor',
+    id: 'faq6',
+  },
+  {
+    title: 'What does it mean to be a Zyggo Elite Coalition Member? ',
+    body: 'Lorem ipsum dolor',
+    id: 'faq7',
+  },
+  {
+    title: 'Will Zyggo Distrikt launch other NFT collections?',
+    body: 'Lorem ipsum dolor',
+    id: 'faq8',
+  },
+]
+
 function Faq() {
   return (
     <div className="faq">
       <div className="container">
         <div className="web-tag">learn more</div>
         <h3>FAQs</h3>
-        <p>We will continue to add to our roadmap over time.</p>
+        <p className="subtitle">
+          We will continue to add to our roadmap over time.
+        </p>
 
-        <div className="accordion" id="accordionExample">
-          <div className="accordion-item bg-white border border-gray-200">
-            <h2 className="accordion-header mb-0" id="headingOne">
-              <button
-                className="
-        accordion-button
-        relative
-        flex
-        items-center
-        w-full
-        py-4
-        px-5
-        text-base text-gray-800 text-left
-        bg-white
-        border-0
-        rounded-none
-        transition
-        focus:outline-none
-      "
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseOne"
-                aria-expanded="true"
-                aria-controls="collapseOne"
+        <div className="accordion accordion-flush" id='faqParent'>
+          {faqData.map((faq, i) => (
+            <div className="accordion-item" key={i}>
+              <h2 className="accordion-header mb-0" id={'flush-' + faq.id}>
+                <button
+                  className="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target={'#' + faq.id}
+                  aria-expanded="false"
+                  aria-controls={faq.id}
+                >
+                  {faq.title}
+                </button>
+              </h2>
+              <div
+                id={faq.id}
+                className="accordion-collapse border-0 collapse"
+                aria-labelledby={'flush-' + faq.id}
+                data-bs-parent="#faqParent"
               >
-                Accordion Item #1
-              </button>
-            </h2>
-            <div
-              id="collapseOne"
-              className="accordion-collapse collapse show"
-              aria-labelledby="headingOne"
-              data-bs-parent="#accordionExample"
-            >
-              <div className="accordion-body py-4 px-5">
-                <strong>This is the first item's accordion body.</strong> It is
-                shown by default, until the collapse plugin adds the appropriate
-                classes that we use to style each element. These classes control
-                the overall appearance, as well as the showing and hiding via
-                CSS transitions. You can modify any of this with custom CSS or
-                overriding our default variables. It's also worth noting that
-                just about any HTML can go within the{' '}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+                <div className="accordion-body">
+                  {faq.body}
+                </div>
               </div>
             </div>
-          </div>
-          <div className="accordion-item bg-white border border-gray-200">
-            <h2 className="accordion-header mb-0" id="headingTwo">
-              <button
-                className="
-        accordion-button
-        collapsed
-        relative
-        flex
-        items-center
-        w-full
-        py-4
-        px-5
-        text-base text-gray-800 text-left
-        bg-white
-        border-0
-        rounded-none
-        transition
-        focus:outline-none
-      "
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo"
-                aria-expanded="false"
-                aria-controls="collapseTwo"
-              >
-                Accordion Item #2
-              </button>
-            </h2>
-            <div
-              id="collapseTwo"
-              className="accordion-collapse collapse"
-              aria-labelledby="headingTwo"
-              data-bs-parent="#accordionExample"
-            >
-              <div className="accordion-body py-4 px-5">
-                <strong>This is the second item's accordion body.</strong> It is
-                hidden by default, until the collapse plugin adds the
-                appropriate classes that we use to style each element. These
-                classes control the overall appearance, as well as the showing
-                and hiding via CSS transitions. You can modify any of this with
-                custom CSS or overriding our default variables. It's also worth
-                noting that just about any HTML can go within the{' '}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
-              </div>
-            </div>
-          </div>
-          <div className="accordion-item bg-white border border-gray-200">
-            <h2 className="accordion-header mb-0" id="headingThree">
-              <button
-                className="accordion-button
-        collapsed
-        relative
-        flex
-        items-center
-        w-full
-        py-4
-        px-5
-        text-base text-gray-800 text-left
-        bg-white
-        border-0
-        rounded-none
-        transition
-        focus:outline-none
-      "
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseThree"
-                aria-expanded="false"
-                aria-controls="collapseThree"
-              >
-                Accordion Item #3
-              </button>
-            </h2>
-            <div
-              id="collapseThree"
-              className="accordion-collapse collapse"
-              aria-labelledby="headingThree"
-              data-bs-parent="#accordionExample"
-            >
-              <div className="accordion-body py-4 px-5">
-                <strong>This is the third item's accordion body.</strong> It is
-                hidden by default, until the collapse plugin adds the
-                appropriate classes that we use to style each element. These
-                classes control the overall appearance, as well as the showing
-                and hiding via CSS transitions. You can modify any of this with
-                custom CSS or overriding our default variables. It's also worth
-                noting that just about any HTML can go within the{' '}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
+      </div>
+
+      <div className="faq-flame">
+        <img src="/build/images/team-flame.png" alt="faq" />
       </div>
     </div>
   )

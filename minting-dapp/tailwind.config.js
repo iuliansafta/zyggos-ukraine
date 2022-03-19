@@ -4,6 +4,7 @@ module.exports = {
   mode: 'jit',
   content: [
     './src/**/*.tsx',
+    './node_modules/tw-elements/dist/js/**/*.js'
   ],
   theme: {
     extend: {},
@@ -39,5 +40,5 @@ module.exports = {
     }
   },
   variants: {},
-  plugins: [],
+  plugins: [require('tw-elements/dist/plugin')],
 }
