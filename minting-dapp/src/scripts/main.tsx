@@ -1,8 +1,8 @@
 import '../styles/main.scss';
 
 import ReactDOM from 'react-dom';
-import Dapp from './react/Dapp';
+import App from './react/App';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  ReactDOM.render(<Dapp />, document.getElementById('minting-dapp'));
+  ReactDOM.render(<App />, document.getElementById('uc-zyggos-dapp'));
 });

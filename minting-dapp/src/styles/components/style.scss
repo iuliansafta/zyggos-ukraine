@@ -1,0 +1,264 @@
+// landing #1
+.landing {
+  @apply flex w-full;
+  @apply relative overflow-hidden;
+  @apply bg-ucyellow;
+  @apply pb-24;
+
+  //sidebar
+  .sidebar {
+    @apply flex flex-col;
+    @apply w-[290px];
+    @apply p-4;
+  }
+
+  .logo {
+    @apply px-8 mt-8;
+
+    img {
+      @apply block w-full;
+    }
+  }
+
+  .nav-list {
+    @apply flex flex-col items-center;
+    @apply mt-14;
+   
+    a {
+      @apply text-black no-underline hover:text-ucblue;
+      @apply px-3 py-1;
+    }
+  }
+
+  .social-media {
+    @apply flex flex-col items-center;
+    @apply mt-16;
+
+    a {
+      @apply p-2;
+    }
+
+    img {
+      @apply w-[33px];
+    }
+  }
+
+  //description
+  &-body {
+    @apply w-[610px];
+    @apply mt-28;
+
+    .landing-description {
+      @apply mt-10;
+    }
+
+    h1 {
+      @apply w-[400px];
+      @apply text-8xl leading-tight;
+    }
+
+    .desc-large {
+      @apply text-2xl;
+      @apply mt-2;
+    }
+
+    .desc-small {
+      @apply text-base;
+      @apply mt-3;
+    }
+
+    .landing-cta {
+      @apply flex mt-9;
+
+      .button {
+        @apply flex items-center justify-items-center;
+        @apply mr-4 text-black text-xl no-underline;
+        @apply hover:text-white hover:bg-ucblue hover:border-ucblue;
+        @apply border-2 border-black rounded-full;
+        @apply px-10 py-4;
+
+        img {
+          @apply h-[24px] mr-3; 
+        }
+      }
+    }
+  }
+
+  .landing-secondary-desc {
+    @apply mt-14;
+  }
+
+  .landing-unite {
+    @apply flex flex-col items-center justify-items-center;
+    @apply pt-[628px] pl-[145px];
+    @apply relative;
+
+    .desc {
+      @apply w-[184px];
+      @apply text-center;
+
+      h3 {
+        @apply text-5xl;
+      }
+    }
+  }
+
+  &-hero {
+    @apply absolute;
+    @apply top-[22px] left-[-170px];
+    @apply w-[730px];
+  }
+
+  &-atom {
+    @apply absolute;
+    @apply -z-10;
+    @apply top-[523px] left-[1309px];
+  }
+  &-dots-r {
+    @apply absolute;
+    @apply -z-10;
+    @apply top-[289px] right-[18px];
+  }
+
+  &-dots-l {
+    @apply absolute;
+    @apply -z-10;
+    @apply bottom-[100px] left-[70px];
+  }
+}
+
+//meet #2
+.meet {
+  @apply pt-[150px] pb-[100px] px-[20px];
+  @apply overflow-hidden relative;
+
+  .desc {
+    @apply flex;
+
+    &-img {
+      @apply min-w-[600px];
+    }
+
+    &-body {
+      @apply pl-[42px] pt-[294px];
+
+      h3 {
+        @apply text-[40px] mt-[20px];
+      }
+
+      p {
+        @apply text-grey text-2xl mt-10;
+      }
+    }
+  }
+
+  .container > p {
+    @apply text-grey text-lg mt-10;
+  }
+
+  &-star {
+    @apply absolute;
+    @apply -z-10;
+    @apply left-[74px] top-[584px];
+  }
+
+  &-moon {
+    @apply absolute;
+    @apply -z-10;
+    @apply right-[105px] top-[120px];
+  }
+
+  &-dots-r {
+    @apply absolute;
+    @apply -z-10;
+    @apply right-[110px] bottom-[123px];
+  }
+}
+
+//motive #3
+
+.motive {
+  @apply relative overflow-hidden;
+  @apply pt-[100px] pb-[80px] px-[20px];
+
+  h3 {
+    @apply text-[40px] mt-[20px];
+  }
+
+  &-cols {
+    @apply flex -mx-[20px] mt-[40px];
+    @apply mt-[40];
+
+    > div {
+      @apply px-[20px] w-full;
+    }
+
+    h4 {
+      @apply text-2xl;
+    }
+
+    p {
+      @apply mt-[20px] text-grey text-lg;
+    }
+  }
+
+  &-dots {
+    @apply absolute;
+    @apply -z-10;
+    @apply left-[50%] -ml-[75px] bottom-[0px]; 
+  }
+}
+
+//manifesto #4
+
+.manifesto {
+  @apply relative overflow-hidden;
+  @apply pt-[80px] pb-[100px] px-[20px];
+
+  h3 {
+    @apply text-[40px] mt-[20px];
+  }
+
+  span {
+    @apply text-lg;
+  }
+
+  &-pose {
+    @apply mt-[30px] px-[40px] -mx-[10px];
+    @apply flex flex-wrap;
+
+    > div {
+      @apply w-[240px] h-[240px] m-[10px];
+
+      &:nth-child(2) {
+        @apply bg-card1;
+      }
+
+      &:nth-child(4) {
+        @apply bg-card2;
+      }
+
+      &:nth-child(9) {
+        @apply bg-card3;
+      }
+
+      &:nth-child(11) {
+        @apply bg-card4;
+      }
+
+      &.manifesto-text {
+        @apply px-[30px] rounded-[30px];
+        @apply text-white text-2xl text-center;
+        @apply flex items-center justify-center;
+      }
+      
+      &.large-box {
+        @apply w-[500px] h-[316px] flex flex-col;
+
+        span {
+          @apply block mt-[40px] whitespace-pre-wrap;
+        }
+      }
+    }
+  }
+}
