@@ -38,7 +38,7 @@ function Roadmap() {
               The Zyggo Team set out on a heart invasion mission for Ukraine.
             </h4>
             <p>
-              We’re currently using all our resources for the limited
+              We&apos;re currently using all our resources for the limited
               MetaHumanity collection, as Ukrainian people need the support of
               the NFT community now!
             </p>
@@ -63,8 +63,8 @@ function Roadmap() {
 
           <p className="small">
             Owning your Zyggo is your pass to trending NFT investments and
-            unlocks Membership perks. You'll play a big role in our road map and
-            have a chance to shape the Zyggo Distrikt future!
+            unlocks Membership perks. You&apos;ll play a big role in our road
+            map and have a chance to shape the Zyggo Distrikt future!
           </p>
 
           <p className="text-breaker">

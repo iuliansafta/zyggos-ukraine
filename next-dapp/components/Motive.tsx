@@ -31,9 +31,9 @@ function Motive() {
             <h4>You become a Zyggo Distrikt member</h4>
             <p>
               and get early access to our upcoming non-charity NFT collections.
-              (we've put our initial NFT project on hold as we're focusing all
-              our resources in the MetaHumanity initiative to help Ukrainian
-              refugees as soon as possible).
+              (we&apos;ve put our initial NFT project on hold as we&apos;re
+              focusing all our resources in the MetaHumanity initiative to help
+              Ukrainian refugees as soon as possible).
             </p>
           </div>
         </div>

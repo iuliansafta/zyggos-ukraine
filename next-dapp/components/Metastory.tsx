@@ -16,7 +16,7 @@ function Metastory() {
           <div>
             <p>
               This secret metacivilization has been trespassing for a long time,
-              and it's getting ready to invade the Metaverse!
+              and it&apos;s getting ready to invade the Metaverse!
             </p>
             <p>Get ready to witness the rise of the Zyggo Society!</p>
           </div>

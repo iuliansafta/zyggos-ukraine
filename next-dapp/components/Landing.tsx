@@ -51,7 +51,7 @@ function Landing() {
           </p>
           <p className="desc-small">
             Instead of feeling helpless, we choose to try to help those in
-            despair, with what we know best. We can't do it without you.
+            despair, with what we know best. We can&apos;t do it without you.
           </p>
 
           <div className="landing-cta">

@@ -50,10 +50,11 @@ function Team() {
         <div className="web-tag">team</div>
         <h3>Zyggo team</h3>
         <p>
-          Just like our NFTs, we're a peculiar bunch of multidisciplinary
+          Just like our NFTs, we&apos;re a peculiar bunch of multidisciplinary
           seniors who love digital art and what it can do for the MetaSociety.
-          We can't do boring, so we have a couple of furry sidekicks to get our
-          creative juices flowing: one hyper puppy and four charismatic cats.
+          We can&apos;t do boring, so we have a couple of furry sidekicks to get
+          our creative juices flowing: one hyper puppy and four charismatic
+          cats.
         </p>
         <p>
           We chose to stay anonymous, as the MetaHumanity Zyggo NFT project is a
