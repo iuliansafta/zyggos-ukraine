@@ -8,20 +8,16 @@ function Footer() {
           <h3>Follow us & spread the word via:</h3>
           <div className="social-media">
             <a href="#" target="_blank">
-              <img
-                src="/images/instagram-w.png"
-                alt="Instagram"
-                layout="fill"
-              />
+              <img src="/images/instagram-w.png" alt="Instagram" />
             </a>
             <a href="#" target="_blank">
-              <img src="/images/twitter-w.png" alt="twitter" layout="fill" />
+              <img src="/images/twitter-w.png" alt="twitter" />
             </a>
             <a href="#" target="_blank">
-              <img src="/images/discord-w.png" alt="discord" layout="fill" />
+              <img src="/images/discord-w.png" alt="discord" />
             </a>
             <a href="#" target="_blank">
-              <img src="/images/medium-w.png" alt="medium" layout="fill" />
+              <img src="/images/medium-w.png" alt="medium" />
             </a>
           </div>
           <p>Reach out & partner with us via ZyggoDistrikt[at]gmail.com</p>
@@ -32,7 +28,7 @@ function Footer() {
         </div>
         <div className="verified">
           <div className="logo">
-            <img src="/images/logo-w.png" alt="Zyggo Distrikt" layout="fill" />
+            <img src="/images/logo-w.png" alt="Zyggo Distrikt" />
           </div>
           <p>
             VERIFIED SMART CONTRACT ADDRESS: {"\n"}
