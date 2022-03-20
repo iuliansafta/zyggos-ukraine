@@ -4,9 +4,13 @@ module.exports = {
   mode: 'jit',
   content: [
     './src/**/*.tsx',
+    './node_modules/tw-elements/dist/js/**/*.js'
   ],
   theme: {
     extend: {},
+    backgroundImage: {
+      'metastory-bg': "url('../images/metastory-bg.png')",
+    },
     colors: {
       ucyellow: '#FFE200',
       ucblue: '#035AB9',
@@ -15,6 +19,8 @@ module.exports = {
       card2: '#5DC6B6',
       card3: '#AA86C9',
       card4: '#0719A1',
+      orange: '#E9814E',
+      lightGrey: '#BDBDBD',
       popupsbg: colors.white,
       neutral: colors.slate,
       primary: colors.indigo,
@@ -34,5 +40,5 @@ module.exports = {
     }
   },
   variants: {},
-  plugins: [],
+  plugins: [require('tw-elements/dist/plugin')],
 }

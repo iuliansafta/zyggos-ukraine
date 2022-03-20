@@ -46,6 +46,22 @@ function Manifesto() {
           </div>
         </div>
       </div>
+
+      <div className="manifesto-dots-l">
+        <img src="/build/images/landing-dots-l.png" alt="manifesto" />
+      </div>
+
+      <div className="manifesto-atom">
+        <img src="/build/images/landing-atom.png" alt="manifesto atom" />
+      </div>
+
+      <div className="manifesto-moon">
+        <img src="/build/images/meet-moon.png" alt="manifesto" />
+      </div>
+
+      <div className="manifesto-dots-r">
+        <img src="/build/images/motive-dots.png" alt="manifesto" />
+      </div>
     </div>
   )
 }
