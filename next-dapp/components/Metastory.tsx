@@ -1,6 +1,6 @@
 function Metastory() {
   return (
-    <div className="metastory">
+    <div className="metastory" id="metastory">
       <div className="container">
         <div className="web-tag">metastory</div>
         <h3>Coming soon...</h3>

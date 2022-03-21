@@ -8,7 +8,16 @@ module.exports = {
   },
   purge: ["./components/**/*.{ts, tsx}", "./pages/**/*.{ts, tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'lgi': '1140px',
+        'xl': '1280px',
+        '2xl': '1536px'
+      },
+    },
     backgroundImage: {
       "metastory-bg": "url('../public/images/metastory-bg.png')",
     },
@@ -22,6 +31,7 @@ module.exports = {
       card4: "#0719A1",
       orange: "#E9814E",
       lightGrey: "#BDBDBD",
+      transparent: 'rgba(0,0,0,0)',
       popupsbg: colors.white,
       neutral: colors.slate,
       primary: colors.indigo,

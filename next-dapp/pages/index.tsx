@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Faq from "../components/Faq";
 import Footer from "../components/Footer";
+import IndexPage from "../components/Head";
 import Landing from "../components/Landing";
 import Manifesto from "../components/Manifesto";
 import Meet from "../components/Meet";
@@ -12,6 +13,7 @@ import Team from "../components/Team";
 const Home: NextPage = () => {
   return (
     <div>
+      <IndexPage />
       <Landing />
       <Meet />
       <Motive />

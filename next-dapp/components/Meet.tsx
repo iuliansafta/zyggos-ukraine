@@ -1,6 +1,6 @@
 function Meet() {
   return (
-    <div className="meet">
+    <div className="meet" id="about">
       <div className="container">
         <div className="desc">
           <div className="desc-img">

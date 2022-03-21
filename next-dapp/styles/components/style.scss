@@ -1,41 +1,60 @@
 // landing #1
 .landing {
-  @apply flex w-full;
+  @apply flex w-full justify-between;
   @apply relative overflow-hidden;
   @apply bg-ucyellow;
-  @apply pb-24;
+  @apply pb-24 px-[20px];
+  @apply sm:pt-[114px];
+  @apply 2xl:pt-0;
+
+  .container {
+    @apply lg:flex block;
+  }
+
+  .navigation {
+    @apply sm:flex 2xl:block;
+  }
 
   //sidebar
   .sidebar {
-    @apply flex flex-col;
-    @apply w-[290px];
-    @apply p-4;
+    @apply fixed sm:w-full sm:flex-row sm:top-0 sm:left-0 sm:bg-ucyellow/70;
+    @apply flex justify-between p-4;
+    @apply z-[9999];
+    @apply 2xl:w-[290px] 2xl:flex-col 2xl:bg-transparent;
   }
 
   .logo {
-    @apply px-8 mt-8;
+    @apply 2xl:mt-8;
 
-    img {
-      @apply block w-full;
+    a {
+      @apply flex w-full justify-center;
     }
   }
 
   .nav-list {
-    @apply flex flex-col items-center;
-    @apply mt-14;
+    @apply sm:flex-row sm:mr-10;
+    @apply flex items-center;
+    @apply 2xl:mt-14 2xl:flex-col 2xl:mr-0;
 
     a {
-      @apply text-black no-underline hover:text-ucblue;
+      @apply text-black no-underline hover:text-ucblue text-xl;
       @apply px-3 py-1;
     }
   }
 
   .social-media {
-    @apply flex flex-col items-center;
-    @apply mt-16;
+    @apply sm:flex-row sm:mt-0;
+    @apply flex 2xl:flex-col items-center;
+    @apply 2xl:mt-16;
 
     a {
       @apply p-2;
+
+      &:hover {
+        svg {
+          @apply fill-ucblue;
+        }
+      }
     }
 
     img {
@@ -45,11 +64,10 @@
 
   //description
   &-body {
-    @apply w-[610px];
-    @apply mt-28;
+    @apply lg:mt-28 relative z-10;
 
     .landing-description {
-      @apply mt-10;
+      @apply mt-10 lg:max-w-[610px];
     }
 
     h1 {
@@ -77,8 +95,10 @@
         @apply border-2 border-black rounded-full;
         @apply px-10 py-4;
 
-        img {
-          @apply h-[24px] mr-3;
+        &:hover {
+          svg {
+            @apply fill-white;
+          }
         }
       }
     }
@@ -90,11 +110,14 @@
 
   .landing-unite {
     @apply flex flex-col items-center justify-items-center;
-    @apply pt-[628px] pl-[145px];
+    @apply lgi:pt-[628px] lgi:pl-[145px] lgi:pr-[161px];
     @apply relative;
 
+    .unite-img {
+      @apply hidden lgi:block;
+    }
     .desc {
-      @apply w-[184px];
+      @apply w-[184px] hidden lgi:block;
       @apply text-center;
 
       h3 {
@@ -104,9 +127,9 @@
   }
 
   &-hero {
-    @apply absolute;
-    @apply top-[22px] left-[-170px];
-    @apply w-[730px];
+    @apply absolute -top-[760px] -right-[40px];
+    @apply lgi:top-[22px] lgi:left-[-170px];
+    @apply w-[600px] lgi:w-[730px];
   }
 
   &-atom {
@@ -124,6 +147,56 @@
     @apply absolute;
     @apply -z-10;
     @apply bottom-[100px] left-[70px];
+  }
+
+  //mobile menu
+  .dropdown-menu {
+    @apply inline-block text-left bg-ucyellow;
+  }
+  .dropdown-list {
+    @apply absolute right-0 w-[100%] mt-2 origin-top-right rounded-md focus:outline-none;
+    @apply flex flex-col bg-ucyellow;
+
+    a {
+      @apply px-[16px] py-[8px] cursor-pointer text-black;
+
+      &:hover {
+        @apply no-underline text-white bg-ucblue;
+      }
+    }
+  }
+  .menu-icon {
+    @apply flex flex-col w-[70px] cursor-pointer;
+
+    span {
+      @apply bg-white rounded-[10px] h-[7px] my-[7px] transition-all;
+
+      &:nth-of-type(1) {
+        @apply w-[50%];
+      }
+      &:nth-of-type(2) {
+        @apply w-[100%];
+      }
+      &:nth-of-type(3) {
+        @apply w-[70%];
+      }
+    }
+
+    input[type="checkbox"] {
+      @apply hidden;
+
+      &:checked ~ span:nth-of-type(1) {
+        @apply origin-bottom rotate-45 translate-x-[8px] translate-y-0;
+      }
+
+      &:checked ~ span:nth-of-type(2) {
+        @apply origin-top -rotate-45;
+      }
+
+      &:checked ~ span:nth-of-type(3) {
+        @apply origin-bottom w-[50%] rotate-45 translate-x-[30px] -translate-y-[11px];
+      }
+    }
   }
 }
 
@@ -564,7 +637,7 @@
 // footer #9
 .footer {
   @apply pt-[60px] pb-[80px] bg-[#7A838B] text-white;
-  
+
   .container {
     @apply flex;
   }
@@ -573,23 +646,23 @@
     h3 {
       @apply text-2xl;
     }
-  
+
     .social-media {
       @apply flex mt-[16px];
-  
+
       a {
         @apply mr-[16px];
       }
     }
-  
+
     p {
       @apply text-lg mt-[30px];
     }
-  
+
     .terms {
       @apply text-lg inline-block mt-[30px] no-underline text-white hover:text-ucblue hover:no-underline;
     }
-  
+
     span {
       @apply text-lg block mt-[50px];
     }

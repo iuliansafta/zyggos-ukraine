@@ -45,7 +45,7 @@ function Team() {
   ];
 
   return (
-    <div className="team">
+    <div className="team" id="team">
       <div className="container">
         <div className="web-tag">team</div>
         <h3>Zyggo team</h3>

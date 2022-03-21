@@ -1,6 +1,3 @@
-// import 'tw-elements'
-import Image from "next/image";
-
 const faqData = [
   {
     title: "What is the mission of the project?",
@@ -46,7 +43,7 @@ const faqData = [
 
 function Faq() {
   return (
-    <div className="faq">
+    <div className="faq" id="faq">
       <div className="container">
         <div className="web-tag">learn more</div>
         <h3>FAQs</h3>
