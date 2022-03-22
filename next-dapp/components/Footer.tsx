@@ -38,7 +38,7 @@ function Footer() {
           </div>
           <p>
             Reach out & partner with us via{' '}
-            <a href="mailto:zyggodistrikt@gmail.com?subject = Hello = Message">
+            <a href="mailto:zyggodistrikt@gmail.com?subject = Let’s join forces! = Message">
               ZyggoDistrikt[at]gmail.com
             </a>
           </p>
