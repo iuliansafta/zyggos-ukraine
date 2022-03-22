@@ -16,7 +16,7 @@ function Team() {
     },
     {
       name: "Dawn",
-      position: "People Whisperer & Brand Alchemist",
+      position: "People Whisperer & \nBrand Alchemist",
       description: "Recovering idealist. Undercover introvert.",
       spirit: "Spirit animal: Falkor (The Neverending Story)",
       image: "/images/dawn.png",

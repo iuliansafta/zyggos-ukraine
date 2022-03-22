@@ -10,7 +10,7 @@ function Meet() {
             <div className="web-tag">nft collection</div>
             <h3>Meet the Zyggos</h3>
             <p>
-              Zyggo Distrikt is launching a humanitarian collection of 1111 NFTs
+              Zyggo Distrikt is launching a humanitarian collection of 3333 NFTs
               inspired by Ukrainian culture and Peace symbolism. All digital
               collectibles are unique, some rarer than others.
             </p>
@@ -22,8 +22,7 @@ function Meet() {
           the Ethereum Blockchain as ERC-721 tokens (hosted on IPFS). Each
           design element embodies a high level of detail, carefully hand-drawn
           with stubborn dedication and quirkiness. The collection is very
-          limited, you can purchase only one MetaHumanity Zyggo NFT for 0,19 ETH
-          (plus gas).
+          limited, you can purchase only three MetaHumanity Zyggo NFTs for 0,12 ETH each (plus gas).
         </p>
       </div>
 

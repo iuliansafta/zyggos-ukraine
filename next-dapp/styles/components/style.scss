@@ -3,7 +3,7 @@
   @apply flex w-full justify-between;
   @apply relative overflow-hidden;
   @apply bg-ucyellow;
-  @apply pt-[114px] pb-24 px-[20px];
+  @apply pt-[114px] pb-14 lg:pb-24 px-[20px];
   @apply text-center md:text-left;
   @apply 2xl:pt-0;
 
@@ -204,7 +204,7 @@
     }
 
     .dropdown-menu {
-      @apply inline-block text-left bg-ucyellow;
+      @apply inline-block text-left;
 
       > button {
         @apply border-0 shadow-none;
@@ -273,18 +273,18 @@
 
 // meet #2
 .meet {
-  @apply pt-[150px] pb-[100px] px-[20px];
-  @apply overflow-hidden relative;
+  @apply pt-[75px] lg:pt-[150px] pb-[60px] lg:pb-[100px] px-[20px];
+  @apply overflow-hidden relative text-center lg:text-left;
 
   .desc {
-    @apply flex;
+    @apply flex items-center lg:flex-row flex-col;
 
     &-img {
-      @apply min-w-[600px];
+      @apply max-w-[300px] lg:max-w-full lg:min-w-[600px];
     }
 
     &-body {
-      @apply pl-[42px] pt-[294px];
+      @apply pl-[42px] pt-[40px] lg:pt-[294px];
 
       h3 {
         @apply text-[40px] mt-[20px];
@@ -321,19 +321,19 @@
 
 // motive #3
 .motive {
-  @apply relative overflow-hidden;
-  @apply pt-[100px] pb-[80px] px-[20px];
+  @apply relative overflow-hidden text-center lg:text-left;
+  @apply pt-[60px] lg:pt-[100px] pb-[40px] lg:pb-[80px] px-[20px];
 
   h3 {
     @apply text-[40px] mt-[20px];
   }
 
   &-cols {
-    @apply flex -mx-[20px] mt-[40px];
-    @apply mt-[40];
+    @apply flex flex-wrap lg:flex-nowrap -mx-[20px] mt-[40px];
+    @apply mt-[40px];
 
     > div {
-      @apply px-[20px] w-full;
+      @apply px-[20px] w-full sm:w-[50%] lg:w-full mb-10 sm:mb-20 lg:mb-0;
     }
 
     h4 {
@@ -354,8 +354,8 @@
 
 // manifesto #4
 .manifesto {
-  @apply relative overflow-hidden;
-  @apply pt-[80px] pb-[200px] px-[20px];
+  @apply relative overflow-hidden text-center lg:text-left;
+  @apply pt-[40px] lg:pt-[80px] pb-[100px] lg:pb-[200px] px-[20px];
 
   h3 {
     @apply text-[40px] mt-[20px];
@@ -366,11 +366,11 @@
   }
 
   &-pose {
-    @apply mt-[30px] px-[40px] -mx-[10px];
-    @apply flex flex-wrap;
+    @apply mt-[30px] px-0 lg:px-[40px] -mx-[10px];
+    @apply flex flex-wrap justify-around;
 
     > div {
-      @apply w-[240px] h-[240px] m-[10px];
+      @apply w-[130px] lg:w-[240px] h-[130px] lg:h-[240px] m-[10px];
 
       &:nth-child(2) {
         @apply bg-card1;
@@ -389,8 +389,8 @@
       }
 
       &.manifesto-text {
-        @apply px-[30px] rounded-[30px];
-        @apply text-white text-2xl text-center;
+        @apply px-[10px] lg:px-[30px] rounded-[15px] lg:rounded-[30px];
+        @apply text-white text-sm lg:text-2xl text-center;
         @apply flex items-center justify-center;
       }
 
@@ -431,8 +431,8 @@
 
 // team #5
 .team {
-  @apply relative overflow-hidden;
-  @apply pt-[40px] pb-[200px] px-[20px];
+  @apply relative overflow-hidden text-center lg:text-left;
+  @apply pt-[20px] lg:pt-[40px] pb-[100px] lg:pb-[200px] px-[20px];
 
   h3 {
     @apply text-[40px] mt-[20px] mb-[20px];
@@ -443,18 +443,18 @@
   }
 
   &-list {
-    @apply flex flex-wrap mt-[60px];
+    @apply flex flex-wrap mt-[60px] items-center flex-col sm:flex-row;
 
     .box {
-      @apply w-[50%] mb-[60px];
-      @apply flex;
+      @apply w-full sm:w-[50%] mb-[60px];
+      @apply flex items-center flex-col lg:flex-row;
 
       &:nth-child(odd) {
-        @apply pr-[50px];
+        @apply pr-0 lg:pr-[50px];
       }
 
       &:nth-last-of-type(-n + 2) {
-        @apply mb-[0px];
+        @apply mb-[60px] sm:mb-[0px];
       }
 
       .image {
@@ -463,7 +463,7 @@
 
       .desc {
         @apply flex flex-col justify-end;
-        @apply pl-[20px];
+        @apply sm:pl-[20px] mt-[20px] lg:mt-0;
       }
 
       h4 {
@@ -471,7 +471,7 @@
       }
 
       h5 {
-        @apply text-lg;
+        @apply text-lg whitespace-pre-line;
       }
 
       p {
@@ -507,9 +507,9 @@
 
 // metastory #6
 .metastory {
-  @apply relative overflow-hidden;
+  @apply relative overflow-hidden text-center lg:text-left;
   @apply bg-no-repeat bg-metastory-bg bg-cover;
-  @apply pt-[150px] pb-[120px] px-[20px];
+  @apply pt-[75px] lg:pt-[150px] pb-[60px] lg:pb-[120px] px-[20px];
   @apply text-white;
 
   .web-tag {
@@ -521,38 +521,42 @@
   }
 
   .description {
-    @apply flex mt-[46px];
+    @apply flex flex-wrap mt-[46px];
 
     div {
-      @apply w-[50%] text-2xl leading-9;
+      @apply lg:w-[50%] text-2xl leading-9;
 
       p {
         @apply mb-[40px];
       }
 
       &:first-child {
-        @apply pr-[70px];
+        @apply lg:pr-[70px];
       }
     }
   }
 
   .cta {
-    @apply flex flex-wrap items-center mt-[40px] bg-[#929292] rounded-[30px];
+    @apply flex flex-wrap lg:flex-nowrap justify-center p-[20px] items-center mt-[40px] bg-[#929292] rounded-[30px];
 
     .desc {
-      @apply w-[550px];
+      @apply mt-[30px] lg:mt-0 lg:w-[550px];
 
       .text {
-        @apply pl-[35px] text-xl;
+        @apply lg:pl-[35px] text-xl;
       }
 
       p {
         @apply mb-[30px];
       }
+
+      > p {
+        @apply lg:pl-[35px];
+      }
     }
 
     .button {
-      @apply px-[28px] py-[21px] mt-[30px] inline-block;
+      @apply px-[28px] py-[21px] mt-[30px] inline-block mb-[10px];
       @apply bg-orange text-xl text-white no-underline rounded-[30px];
     }
   }
@@ -560,17 +564,17 @@
 
 // roadmap #7
 .roadmap {
-  @apply relative overflow-hidden;
-  @apply pt-[50px] pb-[200px] px-[20px];
+  @apply relative overflow-hidden text-center lg:text-left;
+  @apply pt-[50px] pb-[100px] lg:pb-[200px] px-[20px];
 
   .heart-invasion {
-    @apply flex;
+    @apply flex flex-wrap justify-center lg:flex-nowrap lg:justify-start;
 
     .desc {
-      @apply pl-[30px];
+      @applylg:pl-[30px];
 
       h4 {
-        @apply text-grey text-2xl;
+        @apply mt-10 lg:mt-0 text-grey text-2xl;
       }
 
       p {
@@ -580,7 +584,7 @@
   }
 
   .body {
-    @apply pt-[200px];
+    @apply pt-[100px] lg:pt-[200px];
 
     h3 {
       @apply text-[40px] mt-[20px] mb-[30px];
@@ -603,13 +607,13 @@
     @apply flex flex-col my-[54px];
 
     .item {
-      @apply flex items-center mb-[30px] relative;
+      @apply flex flex-col md:flex-row justify-center items-center md:justify-start mb-[30px] relative;
 
       p {
-        @apply pl-[30px];
+        @apply mt-6 md:mt-0 md:pl-[30px];
 
         &:before {
-          @apply content-[''] block absolute bg-lightGrey;
+          @apply content-[''] hidden md:block absolute bg-lightGrey;
           @apply w-[1px] h-[32px];
           @apply left-[30px] top-[60px];
         }
@@ -626,13 +630,13 @@
   }
 
   &-star {
-    @apply absolute;
+    @apply absolute hidden lg:block;
     @apply -z-10;
     @apply top-[160px] right-[305px];
   }
 
   &-dots-l {
-    @apply absolute;
+    @apply absolute hidden sm:block;
     @apply -z-10;
     @apply top-[160px] left-[135px];
   }
@@ -658,8 +662,8 @@
 
 // faq #8
 .faq {
-  @apply relative overflow-hidden;
-  @apply pt-[30px] pb-[240px] px-[20px];
+  @apply relative overflow-hidden text-center lg:text-left;
+  @apply pt-[30px] pb-[120px] lg:pb-[240px] px-[20px];
 
   h3 {
     @apply text-[40px] mt-[20px];
@@ -674,7 +678,7 @@
 
     &-button {
       @apply shadow-none text-2xl text-grey relative flex;
-      @apply items-center w-full py-[20px] px-[30px] text-left;
+      @apply items-center w-full py-[20px] px-[30px] text-center justify-center lg:justify-start lg:text-left;
       @apply bg-[#E3F1FD] border-0 rounded-none transition focus:outline-none;
 
       &:not(.collapsed) {
@@ -683,7 +687,7 @@
     }
 
     &-body {
-      @apply py-[20px] px-[30px] bg-[#E3F1FD] text-grey text-lg;
+      @apply py-[20px] px-[30px] bg-[#E3F1FD] text-grey text-lg whitespace-pre-line;
     }
 
     &-item {
@@ -707,13 +711,15 @@
 
 // footer #9
 .footer {
-  @apply pt-[60px] pb-[80px] bg-[#7A838B] text-white;
+  @apply pt-[60px] px-[20px] pb-[80px] bg-[#7A838B] text-white text-center lg:text-left;
 
   .container {
-    @apply flex;
+    @apply flex flex-col lg:flex-row;
   }
 
   .media {
+    @apply flex flex-col items-center lg:items-start;
+
     h3 {
       @apply text-2xl;
     }
@@ -723,11 +729,25 @@
 
       a {
         @apply mr-[16px];
+
+        &:hover {
+          svg {
+            @apply fill-ucblue;
+          }
+        }
+      }
+
+      svg {
+        @apply fill-white w-[42px] h-[42px];
       }
     }
 
     p {
       @apply text-lg mt-[30px];
+
+      a {
+        @apply text-white hover:text-ucblue hover:no-underline;
+      }
     }
 
     .terms {
@@ -740,7 +760,7 @@
   }
 
   .verified {
-    @apply flex items-end flex-col text-right text-lg;
+    @apply flex items-center lg:items-end flex-col text-center lg:text-right text-lg mt-10 lg:mt-0;
 
     .logo {
       @apply max-w-[225px];
@@ -748,10 +768,15 @@
 
     p {
       @apply mt-[30px];
+
     }
 
     span {
       @apply block mt-[109px];
+
+      a {
+        @apply text-white hover:text-ucblue hover:no-underline;
+      }
     }
   }
 }
