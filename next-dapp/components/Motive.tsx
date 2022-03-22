@@ -2,7 +2,7 @@ function Motive() {
   return (
     <div className="motive">
       <div className="container">
-        <div className="web-tag">why own one</div>
+        <div className="web-tag">why own a zyggo</div>
         <h3>You give, show, inspire, become</h3>
 
         <div className="motive-cols">
@@ -30,9 +30,9 @@ function Motive() {
           <div>
             <h4>You become a Zyggo Distrikt member</h4>
             <p>
-              and get early access to our upcoming non-charity NFT collections.
+              and get early access to our upcoming non-charity NFT collections and membership perks;
               (we&apos;ve put our initial NFT project on hold as we&apos;re
-              focusing all our resources in the MetaHumanity initiative to help
+              focusing all our resources on the MetaHumanity initiative to help
               Ukrainian refugees as soon as possible).
             </p>
           </div>

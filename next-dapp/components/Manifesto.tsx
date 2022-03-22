@@ -1,6 +1,6 @@
 function Manifesto() {
   return (
-    <div className="manifesto">
+    <div className="manifesto" id="manifesto">
       <div className="container">
         <div className="web-tag">manifesto</div>
         <h3>“A man who stands for nothing will fall for anything.” </h3>

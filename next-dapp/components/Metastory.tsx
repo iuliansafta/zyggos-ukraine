@@ -1,6 +1,6 @@
 function Metastory() {
   return (
-    <div className="metastory">
+    <div className="metastory" id="metastory">
       <div className="container">
         <div className="web-tag">metastory</div>
         <h3>Coming soon...</h3>
@@ -39,17 +39,23 @@ function Metastory() {
               <p>
                 Be ahead of the game, take control of your fate and join the
                 Zyggo Elite Coalition to unleash your MetaSelf! A world of
-                crypto treasures awaits.{" "}
+                crypto treasures awaits.{' '}
               </p>
             </div>
-            <a href="#" className="button">
+            <a
+              href="https://discord.gg/GPvMnZ84P6"
+              rel="noreferrer"
+              target="_blank"
+              className="button"
+            >
               Be an ally and take over the metaverse!
             </a>
+            <p>Join our Discord community!</p>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Metastory;
+export default Metastory

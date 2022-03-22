@@ -1,30 +1,30 @@
 function Roadmap() {
   const roadmapList = [
     {
-      image: "/images/roadmap-incubate.png",
-      text: "Incubate | Brand building & Partnerships",
+      image: '/images/roadmap-incubate.png',
+      text: 'Incubate | Brand building & Partnerships',
     },
     {
-      image: "/images/roadmap-infiltrate.png",
-      text: "Infiltrate  | Community expansion",
+      image: '/images/roadmap-infiltrate.png',
+      text: 'Infiltrate  | Community expansion',
     },
     {
-      image: "/images/roadmap-invade.png",
-      text: "Invade | MetaSelf Whitelisting & collection launch",
+      image: '/images/roadmap-invade.png',
+      text: 'Invade | MetaSelf Whitelisting & collection launch',
     },
     {
-      image: "/images/roadmap-store.png",
-      text: "Online Store | Quality merchandise for verified holders",
+      image: '/images/roadmap-store.png',
+      text: 'Online Store | Quality merchandise for verified holders',
     },
     {
-      image: "/images/roadmap-comic.png",
-      text: "Comic Book | Zyggo District virtual comic book",
+      image: '/images/roadmap-comic.png',
+      text: 'Comic Book | Zyggo Distrikt illustrated MetaBook',
     },
     {
-      image: "/images/roadmap-immerse.png",
-      text: "Immerse | MetaEra membership perks & opportunities",
+      image: '/images/roadmap-immerse.png',
+      text: 'Immerse | MetaEra membership perks & opportunities',
     },
-  ];
+  ]
 
   return (
     <div className="roadmap">
@@ -48,7 +48,7 @@ function Roadmap() {
         <div className="body">
           <div className="web-tag">roadmap</div>
           <h3>Empowering the Future</h3>
-          <p>We will continue to add to our roadmap over time.</p>
+          <p>Empowering the Future of NFT Experiences</p>
 
           <div className="roadmap-list">
             {roadmapList.map((roadmap, i) => (
@@ -60,6 +60,11 @@ function Roadmap() {
               </div>
             ))}
           </div>
+          <p className="text-breaker">
+            Owning your Zyggo is your MetaPass to trending NFT investments and
+            unlocks Membership privileges and rewards. You’ll play a big role in
+            our roadmap and have a chance to shape the Zyggo Distrikt future!
+          </p>
 
           <p className="small">
             Owning your Zyggo is your pass to trending NFT investments and
@@ -76,7 +81,7 @@ function Roadmap() {
           </p>
           <p className="small">
             25% sales &nbsp;&nbsp;&nbsp; | random NFT air drops to lucky Zyggo
-            owners{" "}
+            owners{' '}
           </p>
           <p className="small">
             40% sales &nbsp;&nbsp;&nbsp; | raffles, freebies and wacky rewards
@@ -120,7 +125,7 @@ function Roadmap() {
         <img src="/images/roadmap-star.png" alt="star" />
       </div>
     </div>
-  );
+  )
 }
 
-export default Roadmap;
+export default Roadmap

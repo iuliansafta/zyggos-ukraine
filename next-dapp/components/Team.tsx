@@ -16,7 +16,7 @@ function Team() {
     },
     {
       name: "Dawn",
-      position: "People Whisperer & Brand Alchemist",
+      position: "People Whisperer & \nBrand Alchemist",
       description: "Recovering idealist. Undercover introvert.",
       spirit: "Spirit animal: Falkor (The Neverending Story)",
       image: "/images/dawn.png",
@@ -45,7 +45,7 @@ function Team() {
   ];
 
   return (
-    <div className="team">
+    <div className="team" id="team">
       <div className="container">
         <div className="web-tag">team</div>
         <h3>Zyggo team</h3>
