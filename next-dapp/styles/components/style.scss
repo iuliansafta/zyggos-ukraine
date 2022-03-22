@@ -4,7 +4,7 @@
   @apply relative overflow-hidden;
   @apply bg-ucyellow;
   @apply pt-[114px] pb-24 px-[20px];
-  @apply text-center md:text-left; 
+  @apply text-center md:text-left;
   @apply 2xl:pt-0;
 
   .container {
@@ -28,6 +28,10 @@
 
     a {
       @apply flex w-full justify-center;
+    }
+
+    svg {
+      @apply w-[100px] md:w-[180px];
     }
   }
 
@@ -153,17 +157,71 @@
   .menu {
     @apply lg:hidden;
 
+    .hamburger-button {
+      a {
+        @apply inline-block h-[25px];
+
+        &:hover {
+          span {
+            @apply bg-ucblue;
+            &:before,
+            &:after {
+              @apply bg-ucblue;
+            }
+          }
+
+          span {
+            &:after {
+              @apply w-[20px];
+            }
+          }
+        }
+      }
+
+      span {
+        @apply bg-black w-[30px] h-[4px] inline-block rounded-[5px] transition-all;
+
+        &:before {
+          @apply content-[''] bg-black w-[30px] h-[4px] block relative top-[6px] transition-all rounded-[5px];
+        }
+
+        &:after {
+          @apply content-[''] bg-black w-[30px] h-[4px] block relative -top-[10px] transition-all rounded-[5px];
+        }
+      }
+
+      .animatex {
+        @apply rotate-45;
+
+        &:after {
+          @apply hidden;
+        }
+
+        &:before {
+          @apply -rotate-[270deg] top-0 left-0;
+        }
+      }
+    }
+
     .dropdown-menu {
       @apply inline-block text-left bg-ucyellow;
+
+      > button {
+        @apply border-0 shadow-none;
+
+        &:hover {
+          @apply bg-transparent;
+        }
+      }
     }
 
     .dropdown-list {
       @apply right-0 w-[100%] mt-2 origin-top-right rounded-md focus:outline-none;
-      @apply flex flex-col bg-ucyellow text-center fixed top-[106px] h-screen;
-  
+      @apply flex flex-col  bg-ucyellow/90 text-center fixed top-[106px] h-screen;
+
       a {
         @apply px-[16px] py-[8px] cursor-pointer text-black;
-  
+
         &:hover {
           @apply no-underline text-white bg-ucblue;
         }
@@ -171,7 +229,7 @@
 
       .social {
         @apply w-full flex justify-center py-[10px];
-  
+
         a:hover {
           @apply bg-transparent;
         }
@@ -179,10 +237,10 @@
     }
     .menu-icon {
       @apply flex flex-col w-[70px] cursor-pointer;
-  
+
       span {
         @apply bg-white rounded-[10px] h-[7px] my-[7px] transition-all;
-  
+
         &:nth-of-type(1) {
           @apply w-[50%];
         }
@@ -193,18 +251,18 @@
           @apply w-[70%];
         }
       }
-  
+
       input[type="checkbox"] {
         @apply hidden;
-  
+
         &:checked ~ span:nth-of-type(1) {
           @apply origin-bottom rotate-45 translate-x-[8px] translate-y-0;
         }
-  
+
         &:checked ~ span:nth-of-type(2) {
           @apply origin-top -rotate-45;
         }
-  
+
         &:checked ~ span:nth-of-type(3) {
           @apply origin-bottom w-[50%] rotate-45 translate-x-[30px] -translate-y-[11px];
         }
