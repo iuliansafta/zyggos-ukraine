@@ -22,7 +22,7 @@ const Home: NextPage = () => {
       <Metastory />
       <Roadmap />
       <Faq />
-      <Footer />
+      <Footer page="home" />
     </div>
   );
 };
