@@ -24,39 +24,66 @@ function Landing() {
         <div className="navigation">
           <div className="menu">
             <Menu as="div" className="dropdown-menu">
-              {({ open }) => (
-                <>
-                  <Menu.Button>Open</Menu.Button>
-
-                  <Transition
-                    show={open}
-                    enter="transition duration-100 ease-out"
-                    enterFrom="transform scale-95 opacity-0"
-                    enterTo="transform scale-100 opacity-100"
-                    leave="transition duration-75 ease-out"
-                    leaveFrom="transform scale-100 opacity-100"
-                    leaveTo="transform scale-95 opacity-0"
-                  >
-                    <Menu.Items className="dropdown-list">
-                      <Menu.Item>
-                        <a href="#about">about</a>
-                      </Menu.Item>
-                      <Menu.Item>
-                        <a href="#manifesto">manifesto</a>
-                      </Menu.Item>
-                      <Menu.Item>
-                        <a href="#team">team</a>
-                      </Menu.Item>
-                      <Menu.Item>
-                        <a href="#metastory">metastory</a>
-                      </Menu.Item>
-                      <Menu.Item>
-                        <a href="#faq">FAQs</a>
-                      </Menu.Item>
-                    </Menu.Items>
-                  </Transition>
-                </>
-              )}
+              <Menu.Button>More</Menu.Button>
+              <Transition
+                as={Fragment}
+                enter="transition ease-out duration-100"
+                enterFrom="transform opacity-0 scale-95"
+                enterTo="transform opacity-100 scale-100"
+                leave="transition ease-in duration-75"
+                leaveFrom="transform opacity-100 scale-100"
+                leaveTo="transform opacity-0 scale-95"
+              >
+                <Menu.Items className="dropdown-list">
+                  <Menu.Item>
+                    <a href="#about">about</a>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <a href="#manifesto">manifesto</a>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <a href="#team">team</a>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <a href="#metastory">metastory</a>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <a href="#faq">FAQs</a>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <div className="social">
+                      <a
+                        href="https://www.instagram.com/zyggodistrikt/"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        <Instagram />
+                      </a>
+                      <a
+                        href="https://twitter.com/ZyggoDistrikt"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        <Twitter />
+                      </a>
+                      <a
+                        href="https://discord.gg/GPvMnZ84P6"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        <Discord />
+                      </a>
+                      <a
+                        href="https://medium.com/@zyggodistrikt"
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        <Medium />
+                      </a>
+                    </div>
+                  </Menu.Item>
+                </Menu.Items>
+              </Transition>
             </Menu>
           </div>
 

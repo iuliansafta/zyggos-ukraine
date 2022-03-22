@@ -209,5 +209,4 @@ export const Discord2 = () => (
       </g>
     </g>
   </svg>
-
 )
