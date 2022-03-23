@@ -64,6 +64,9 @@ const router = useRouter()
                             <a href="#metastory">metastory</a>
                           </Menu.Item>
                           <Menu.Item>
+                            <a href="#" onClick={() => router.push('/minting')}>mint</a>
+                          </Menu.Item>
+                          <Menu.Item>
                             <a href="#faq">FAQs</a>
                           </Menu.Item>
                           <Menu.Item>
@@ -112,6 +115,7 @@ const router = useRouter()
             <a href="#manifesto">manifesto</a>
             <a href="#team">team</a>
             <a href="#metastory">metastory</a>
+            <a href="#" onClick={() => router.push('/minting')}>mint</a>
             <a href="#faq">FAQs</a>
           </nav>
 

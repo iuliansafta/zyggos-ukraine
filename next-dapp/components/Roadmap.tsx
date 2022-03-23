@@ -60,12 +60,6 @@ function Roadmap() {
               </div>
             ))}
           </div>
-          <p className="text-breaker">
-            Owning your Zyggo is your MetaPass to trending NFT investments and
-            unlocks Membership privileges and rewards. You’ll play a big role in
-            our roadmap and have a chance to shape the Zyggo Distrikt future!
-          </p>
-
           <p className="small">
             Owning your Zyggo is your pass to trending NFT investments and
             unlocks Membership perks. You&apos;ll play a big role in our road
