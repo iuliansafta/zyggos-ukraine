@@ -119,6 +119,10 @@
 
     .unite-img {
       @apply hidden lgi:block;
+
+      svg {
+        @apply w-[85px] fill-black;
+      }
     }
     .desc {
       @apply w-[184px] hidden lgi:block;
@@ -571,7 +575,7 @@
     @apply flex flex-wrap justify-center lg:flex-nowrap lg:justify-start;
 
     .desc {
-      @applylg:pl-[30px];
+      @applylg:pl- [30px];
 
       h4 {
         @apply mt-10 lg:mt-0 text-grey text-2xl;
@@ -717,6 +721,16 @@
     @apply flex flex-col lg:flex-row;
   }
 
+  .logo {
+    svg {
+      @apply w-[225px] fill-white;
+    }
+  }
+
+  a {
+    @apply text-white hover:text-ucblue hover:no-underline font-normal;
+  }
+
   .media {
     @apply flex flex-col items-center lg:items-start;
 
@@ -744,14 +758,10 @@
 
     p {
       @apply text-lg mt-[30px];
-
-      a {
-        @apply text-white hover:text-ucblue hover:no-underline;
-      }
     }
 
     .terms {
-      @apply text-lg inline-block mt-[30px] no-underline text-white hover:text-ucblue hover:no-underline;
+      @apply text-lg inline-block mt-[30px];
     }
 
     span {
@@ -767,15 +777,126 @@
     }
 
     p {
-      @apply mt-[30px];
-
+      @apply text-xs sm:text-base mt-[30px];
     }
 
     span {
       @apply block mt-[109px];
+    }
+  }
 
-      a {
-        @apply text-white hover:text-ucblue hover:no-underline;
+  &-mint {
+    @apply bg-ucyellow text-black;
+
+    a {
+      @apply text-black hover:text-ucblue hover:no-underline;
+    }
+
+    .logo {
+      @apply cursor-pointer;
+
+      svg {
+        @apply fill-black;
+      }
+    }
+
+    .media {
+      .social-media {
+        svg {
+          @apply fill-black;
+        }
+      }
+    }
+  }
+}
+
+// minting #10
+
+.mint {
+  @apply text-center lg:text-left;
+
+  .web-tag {
+    @apply bg-white text-ucblue;
+  }
+
+  .container {
+    @apply flex justify-between items-center flex-col lg:flex-row;
+  }
+
+  h3 {
+    @apply text-[40px] mt-[20px] mb-[20px];
+  }
+
+  h2 {
+    @apply text-[50px] sm:text-[70px] md:text-[100px] leading-tight;
+  }
+
+  .details {
+    @apply lg:max-w-[550px];
+  }
+
+  .wallet-connect {
+    @apply mt-[40px];
+
+    button {
+      @apply text-xl font-normal text-white bg-transparent mb-[20px] px-[62px] py-[21px] hover:bg-white hover:text-ucblue;
+    }
+  }
+
+  .info {
+    @apply flex flex-col items-center justify-center;
+    @apply relative mt-[30px] lg:mt-0;
+
+    .unite-img {
+      @apply block;
+
+      svg {
+        @apply w-[85px] fill-white;
+      }
+    }
+    .desc {
+      @apply w-[184px] block;
+      @apply text-center;
+
+      h5 {
+        @apply text-5xl;
+      }
+    }
+  }
+
+  &-hero {
+    @apply bg-ucblue text-white;
+    @apply px-[20px] py-[60px];
+  }
+
+  &-data {
+    @apply pt-[60px] pb-[135px] px-[20px] bg-ucyellow;
+
+    .container {
+      @apply items-start;
+    }
+
+    .details {
+      @apply text-lg text-black lg:pr-[40px];
+    }
+
+    .info {
+      @apply w-full text-lg justify-start lg:items-start;
+    }
+
+    .mint-informations {
+      @apply w-full lg:w-[506px] mt-[10px];
+
+      li {
+        @apply border-black border-b flex py-[14px];
+
+        &:last-of-type {
+          @apply border-none;
+        }
+
+        p {
+          @apply w-[50%];
+        }
       }
     }
   }

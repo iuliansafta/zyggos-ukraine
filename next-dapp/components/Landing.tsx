@@ -1,8 +1,12 @@
-import { Menu, Transition } from '@headlessui/react'
+import { Menu, Transition } from '@headlessui/react';
+import { useRouter } from 'next/router';
 import { Fragment } from 'react'
-import { Discord, Discord2, Instagram, Logo, Medium, Twitter } from './images'
+import { Discord, Discord2, Instagram, LandingUnite, Logo, Medium, Twitter } from './images'
+
 
 function Landing() {
+const router = useRouter()
+
   return (
     <div className="landing" id="landing">
       <div className="landing-atom">
@@ -161,8 +165,8 @@ function Landing() {
             </p>
 
             <div className="landing-cta">
-              <a href="#" className="button cta">
-                BUY on Opensea
+              <a href="#" className="button cta" onClick={() => router.push('/minting')}>
+                Mint to Help
               </a>
               <a href="#" className="button cta">
                 <Discord2 /> &nbsp; Join our Discord
@@ -183,7 +187,7 @@ function Landing() {
 
         <div className="landing-unite">
           <div className="unite-img">
-            <img src="/images/landing-unite.png" alt="landing unite" />
+            <LandingUnite />
           </div>
           <div className="desc">
             <p>Sharp crypto minds & hearts</p>

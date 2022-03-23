@@ -1,8 +1,11 @@
-import { Discord, Discord2, Instagram, Logo, Medium, Twitter } from './images'
+import { Discord, Instagram, Logo, Medium, Twitter } from './images'
+import { useRouter } from 'next/router';
 
-function Footer() {
+function Footer({ page }: { page: string }) {
+  const router = useRouter();
+  
   return (
-    <div className="footer">
+    <div className={page === 'mint' ? 'footer footer-mint' : 'footer'}>
       <div className="container">
         <div className="media">
           <h3>Follow us & spread the word via:</h3>
@@ -49,8 +52,8 @@ function Footer() {
         </div>
         <div className="verified">
           <div className="logo">
-            <a href="#landing">
-              <img src="/images/logo-w.png" alt="Zyggo Distrikt" />
+            <a onClick={() => router.push('/#landing')}>
+              <Logo />
             </a>
           </div>
           <p>
