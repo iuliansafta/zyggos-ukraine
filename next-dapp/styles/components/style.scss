@@ -682,7 +682,7 @@
 
     &-button {
       @apply shadow-none text-2xl text-grey relative flex;
-      @apply items-center w-full py-[20px] px-[30px] mb-[10px] text-center justify-center lg:justify-start lg:text-left;
+      @apply items-center w-full py-[20px] px-[30px] mb-[10px] text-left justify-center lg:justify-start;
       @apply bg-[#E3F1FD] border-0 rounded-none transition focus:outline-none;
 
       &:not(.collapsed) {
@@ -690,7 +690,7 @@
       }
 
       .title {
-        @apply flex justify-between w-full;
+        @apply flex justify-between w-full items-center;
       }
     }
 
