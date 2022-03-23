@@ -1,4 +1,10 @@
-const zyggoLink = <a href="mailto:zyggodistrikt@gmail.com?subject = Hello = Message">ZyggoDistrikt@gmail.com</a>
+import { Disclosure, Transition } from '@headlessui/react'
+
+const zyggoLink = (
+  <a href="mailto:zyggodistrikt@gmail.com?subject = Hello = Message">
+    ZyggoDistrikt@gmail.com
+  </a>
+)
 const faqData = [
   {
     title: 'What is the mission of the project?',
@@ -32,7 +38,8 @@ const faqData = [
   },
   {
     title: 'How can I help the cause for Ukraine?  ',
-    body: 'You’re awesome! There are many ways to do that: \n- Join our social media channels and help us spread the word on the humanitarian Zyggo Collection. \n- Buy a MetaHumanity Zyggo NFT when launch the Public Mint on our website.\n- Tell your friends and crypto communities. \n- Reach out via ZyggoDistrikt@gmail.com and partner with us for this cause if you have a cool idea (e.g. fundraising initiatives, promo partnerships, etc.)',
+    body:
+      'You’re awesome! There are many ways to do that: \n- Join our social media channels and help us spread the word on the humanitarian Zyggo Collection. \n- Buy a MetaHumanity Zyggo NFT when launch the Public Mint on our website.\n- Tell your friends and crypto communities. \n- Reach out via ZyggoDistrikt@gmail.com and partner with us for this cause if you have a cool idea (e.g. fundraising initiatives, promo partnerships, etc.)',
     id: 'faq6',
   },
   {
@@ -75,30 +82,35 @@ function Faq() {
           .
         </p>
 
-        <div className="accordion accordion-flush" id="faqParent">
+        <div className="accordion">
           {faqData.map((faq, i) => (
-            <div className="accordion-item" key={i}>
-              <h2 className="accordion-header mb-0" id={'flush-' + faq.id}>
-                <button
-                  className="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target={'#' + faq.id}
-                  aria-expanded="false"
-                  aria-controls={faq.id}
-                >
-                  {faq.title}
-                </button>
-              </h2>
-              <div
-                id={faq.id}
-                className="accordion-collapse border-0 collapse"
-                aria-labelledby={'flush-' + faq.id}
-                data-bs-parent="#faqParent"
-              >
-                <div className="accordion-body">{faq.body}</div>
-              </div>
-            </div>
+            <Disclosure key={i}>
+              {({ open }) => (
+                <>
+                  <Disclosure.Button
+                    className={
+                      open ? 'accordion-button' : 'accordion-button collapsed'
+                    }
+                  >
+                    <div className="title">
+                      {faq.title}
+                      <span>{open ? '-' : '+'}</span>
+                    </div>
+                  </Disclosure.Button>
+                  <Transition
+                    enter="transition duration-100 ease-out"
+                    enterFrom="transform scale-95 opacity-0"
+                    enterTo="transform scale-100 opacity-100"
+                    leave="transition duration-75 ease-out"
+                    leaveFrom="transform scale-100 opacity-100"
+                    leaveTo="transform scale-95 opacity-0"
+                  ></Transition>
+                  <Disclosure.Panel className="accordion-body">
+                    {faq.body}
+                  </Disclosure.Panel>
+                </>
+              )}
+            </Disclosure>
           ))}
         </div>
       </div>

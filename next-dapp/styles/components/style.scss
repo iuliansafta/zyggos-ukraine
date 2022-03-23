@@ -220,7 +220,7 @@
     }
 
     .dropdown-list {
-      @apply right-0 w-[100%] mt-2 origin-top-right rounded-md focus:outline-none;
+      @apply right-0 mt-[6px] pt-[10px] w-[100%] origin-top-right rounded-md focus:outline-none;
       @apply flex flex-col  bg-ucyellow/90 text-center fixed top-[106px] h-screen;
 
       a {
@@ -471,7 +471,7 @@
       }
 
       h4 {
-        @apply text-[40px] leading-8;
+        @apply text-[40px] leading-8 mb-[10px];
       }
 
       h5 {
@@ -541,13 +541,13 @@
   }
 
   .cta {
-    @apply flex flex-wrap lg:flex-nowrap justify-center p-[20px] items-center mt-[40px] bg-[#929292] rounded-[30px];
+    @apply flex flex-wrap lg:flex-nowrap justify-center px-[20px] items-center mt-[40px] bg-[#929292] rounded-[30px];
 
     .desc {
-      @apply mt-[30px] lg:mt-0 lg:w-[550px];
+      @apply lg:pl-[35px] mt-[30px] lg:mt-0 lg:w-[550px] py-[20px];
 
       .text {
-        @apply lg:pl-[35px] text-xl;
+        @apply text-xl;
       }
 
       p {
@@ -555,7 +555,7 @@
       }
 
       > p {
-        @apply lg:pl-[35px];
+        @apply mt-[10px] mb-0;
       }
     }
 
@@ -575,7 +575,7 @@
     @apply flex flex-wrap justify-center lg:flex-nowrap lg:justify-start;
 
     .desc {
-      @applylg:pl- [30px];
+      @apply lg:pl-[30px];
 
       h4 {
         @apply mt-10 lg:mt-0 text-grey text-2xl;
@@ -682,20 +682,24 @@
 
     &-button {
       @apply shadow-none text-2xl text-grey relative flex;
-      @apply items-center w-full py-[20px] px-[30px] text-center justify-center lg:justify-start lg:text-left;
+      @apply items-center w-full py-[20px] px-[30px] mb-[10px] text-left justify-center lg:justify-start;
       @apply bg-[#E3F1FD] border-0 rounded-none transition focus:outline-none;
 
       &:not(.collapsed) {
         @apply text-grey bg-white;
       }
+
+      .title {
+        @apply flex justify-between w-full items-center;
+      }
     }
 
     &-body {
-      @apply py-[20px] px-[30px] bg-[#E3F1FD] text-grey text-lg whitespace-pre-line;
+      @apply py-[20px] px-[30px] bg-[#E3F1FD] text-grey text-lg whitespace-pre-line mb-[10px];
     }
 
     &-item {
-      @apply border-0 rounded-none bg-white mb-[10px];
+      @apply border-0 rounded-none bg-white;
 
       &:first-of-type,
       &:last-of-type {
