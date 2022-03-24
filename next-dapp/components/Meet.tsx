@@ -1,4 +1,8 @@
+import { useRouter } from 'next/router'
+
 function Meet() {
+  const router = useRouter()
+
   return (
     <div className="meet" id="about">
       <div className="container">
@@ -14,6 +18,13 @@ function Meet() {
               inspired by Ukrainian culture and Peace symbolism. All digital
               collectibles are unique, some rarer than others.
             </p>
+            <a
+              href="#"
+              className="button cta"
+              onClick={() => router.push('/minting')}
+            >
+              MINT a Zyggo
+            </a>
           </div>
         </div>
         <p>
@@ -22,7 +33,8 @@ function Meet() {
           the Ethereum Blockchain as ERC-721 tokens (hosted on IPFS). Each
           design element embodies a high level of detail, carefully hand-drawn
           with stubborn dedication and quirkiness. The collection is very
-          limited, you can purchase only three MetaHumanity Zyggo NFTs for 0,12 ETH each (plus gas).
+          limited, you can purchase only three MetaHumanity Zyggo NFTs for 0,12
+          ETH each (plus gas).
         </p>
       </div>
 
@@ -38,7 +50,7 @@ function Meet() {
         <img src="/images/landing-dots-l.png" alt="meet dots" />
       </div>
     </div>
-  );
+  )
 }
 
-export default Meet;
+export default Meet

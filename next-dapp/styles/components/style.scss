@@ -93,7 +93,7 @@
       @apply flex mt-9 justify-center md:justify-start flex-wrap;
 
       .button {
-        @apply flex items-center justify-items-center;
+        @apply flex items-center justify-center;
         @apply mr-4 text-black text-xl no-underline;
         @apply hover:text-white hover:bg-ucblue hover:border-ucblue;
         @apply border-2 border-black rounded-full;
@@ -113,7 +113,7 @@
   }
 
   .landing-unite {
-    @apply flex flex-col items-center justify-items-center;
+    @apply flex flex-col items-center justify-center;
     @apply lgi:pt-[628px] lgi:pl-[145px] lgi:pr-[161px];
     @apply relative;
 
@@ -281,14 +281,22 @@
   @apply overflow-hidden relative text-center lg:text-left;
 
   .desc {
-    @apply flex items-center lg:flex-row flex-col;
+    @apply flex lg:flex-row flex-col items-end;
 
     &-img {
       @apply max-w-[300px] lg:max-w-full lg:min-w-[600px];
     }
 
     &-body {
-      @apply pl-[42px] pt-[40px] lg:pt-[294px];
+      @apply pl-[42px] pt-[40px];
+
+      .button {
+        @apply inline-block mt-[30px];
+        @apply mr-4 text-black text-xl no-underline;
+        @apply hover:text-white hover:bg-ucblue hover:border-ucblue;
+        @apply border-2 border-black rounded-full;
+        @apply px-10 py-4 mb-[20px] md:mb-0;
+      }
 
       h3 {
         @apply text-[40px] mt-[20px];
@@ -815,7 +823,6 @@
 }
 
 // minting #10
-
 .mint {
   @apply text-center lg:text-left;
 
@@ -902,6 +909,48 @@
           @apply w-[50%];
         }
       }
+    }
+  }
+}
+
+// terms modal
+.terms-modal {
+  @apply fixed top-0 left-0 right-0 bottom-0 z-[9999];
+  @apply flex justify-center items-center;
+
+  .overlay {
+    @apply bg-black/50 fixed top-0 left-0 right-0 bottom-0;
+  }
+
+  .modal-body {
+    @apply  relative z-[10] w-full max-w-[680px] m-[20px] h-[80vh] bg-white rounded-[4px] flex flex-col;
+  }
+
+  .modal-title {
+    @apply px-[40px] py-[20px] border-b border-grey/60;
+  }
+
+  .modal-description {
+    @apply px-[40px] pt-[20px] pb-[80px] h-full overflow-y-auto;
+
+    p {
+      @apply mb-[10px] text-sm;
+
+      &.align-right {
+        @apply text-right mb-0;
+      }
+
+      &.mtop {
+        @apply mt-[40px];
+      }
+    }
+  }
+
+  .modal-footer {
+    @apply px-[40px] py-[14px] border-t border-grey/60 flex justify-end;
+
+    button {
+      @apply border-black;
     }
   }
 }
