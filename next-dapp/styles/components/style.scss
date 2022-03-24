@@ -99,6 +99,11 @@
         @apply border-2 border-black rounded-full;
         @apply px-10 py-4 mb-[20px] md:mb-0;
 
+        &.mint-to-help {
+          @apply text-white bg-ucblue border-ucblue;
+          @apply hover:border-black hover:text-black hover:bg-transparent;
+        }
+
         &:hover {
           svg {
             @apply fill-white;
@@ -221,7 +226,7 @@
 
     .dropdown-list {
       @apply right-0 mt-[6px] pt-[10px] w-[100%] origin-top-right rounded-md focus:outline-none;
-      @apply flex flex-col  bg-ucyellow/90 text-center fixed top-[106px] h-screen;
+      @apply flex flex-col  bg-ucyellow/90 text-center fixed top-[70px] md:top-[106px] h-screen;
 
       a {
         @apply px-[16px] py-[8px] cursor-pointer text-black;
@@ -293,8 +298,9 @@
       .button {
         @apply inline-block mt-[30px];
         @apply mr-4 text-black text-xl no-underline;
-        @apply hover:text-white hover:bg-ucblue hover:border-ucblue;
-        @apply border-2 border-black rounded-full;
+        @apply text-white bg-ucblue border-ucblue;
+        @apply hover:border-black hover:text-black hover:bg-transparent;
+        @apply border-2 rounded-full;
         @apply px-10 py-4 mb-[20px] md:mb-0;
       }
 

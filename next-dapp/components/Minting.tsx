@@ -39,16 +39,16 @@ function Mint() {
               💙 of the Ethereum Blockchain as ERC-721 tokens (hosted on IPFS).
               Each design element embodies a high level of detail, carefully
               hand-drawn with stubborn dedication and quirkiness. The collection
-              is very limited, you can purchase only one MetaHumanity Zyggo NFT
-              for 0.19 ETH (plus gas).
+              is very limited, you can purchase only three MetaHumanity Zyggo
+              NFTs for 0.12 ETH each (plus gas).
             </p>
           </div>
           <div className="info">
             <span>MINTING informations:</span>
-            <ul className='mint-informations'>
+            <ul className="mint-informations">
               <li>
                 <p>Mint Price</p>
-                <p>0.19</p>
+                <p>0.12 ETH</p>
               </li>
               <li>
                 <p>NFTs</p>
@@ -56,7 +56,7 @@ function Mint() {
               </li>
               <li>
                 <p>Sale Time</p>
-                <p>2 weeks</p>
+                <p>TBA</p>
               </li>
               <li>
                 <p>Whitelist</p>
