@@ -80,7 +80,7 @@
     }
 
     .desc-large {
-      @apply text-2xl;
+      @apply text-2xl leading-9;
       @apply mt-2;
     }
 
@@ -115,6 +115,10 @@
 
   .landing-secondary-desc {
     @apply mt-14;
+
+    a {
+      @apply text-black no-underline hover:text-ucblue;
+    }
   }
 
   .landing-unite {
@@ -309,13 +313,13 @@
       }
 
       p {
-        @apply text-grey text-2xl mt-10;
+        @apply text-grey text-2xl leading-9 mt-10;
       }
     }
   }
 
   .container > p {
-    @apply text-grey text-lg mt-10;
+    @apply text-grey text-lg leading-7 mt-10;
   }
 
   &-star {
@@ -355,11 +359,11 @@
     }
 
     h4 {
-      @apply text-2xl;
+      @apply text-2xl leading-9;
     }
 
     p {
-      @apply mt-[20px] text-grey text-lg;
+      @apply mt-[20px] text-grey text-lg leading-7;
     }
   }
 
@@ -380,7 +384,7 @@
   }
 
   span {
-    @apply text-lg;
+    @apply text-lg leading-7;
   }
 
   &-pose {
@@ -408,7 +412,7 @@
 
       &.manifesto-text {
         @apply px-[10px] lg:px-[30px] rounded-[15px] lg:rounded-[30px];
-        @apply text-white text-sm lg:text-2xl text-center;
+        @apply text-white text-sm lg:text-2xl leading-9 text-center;
         @apply flex items-center justify-center;
       }
 
@@ -457,7 +461,7 @@
   }
 
   .container > p {
-    @apply text-grey mt-[10px];
+    @apply text-grey text-2xl leading-9 mt-[10px];
   }
 
   &-list {
@@ -489,7 +493,7 @@
       }
 
       h5 {
-        @apply text-lg whitespace-pre-line;
+        @apply text-lg leading-7 whitespace-pre-line;
       }
 
       p {
@@ -542,7 +546,7 @@
     @apply flex flex-wrap mt-[46px];
 
     div {
-      @apply lg:w-[50%] text-2xl leading-9;
+      @apply lg:w-[50%] text-2xl leading-9 leading-9;
 
       p {
         @apply mb-[40px];
@@ -575,7 +579,7 @@
 
     .button {
       @apply px-[28px] py-[21px] mt-[30px] inline-block mb-[10px];
-      @apply bg-orange text-xl text-white no-underline rounded-[30px];
+      @apply bg-orange text-xl text-white no-underline rounded-full;
     }
   }
 }
@@ -592,11 +596,11 @@
       @apply lg:pl-[30px];
 
       h4 {
-        @apply mt-10 lg:mt-0 text-grey text-2xl;
+        @apply mt-10 lg:mt-0 text-grey text-2xl leading-9;
       }
 
       p {
-        @apply text-grey text-lg;
+        @apply text-grey text-lg leading-7;
       }
     }
   }
@@ -609,10 +613,10 @@
     }
 
     p {
-      @apply text-grey text-2xl;
+      @apply text-grey text-2xl leading-9;
 
       &.small {
-        @apply text-lg mb-[14px];
+        @apply text-lg leading-7 mb-[14px];
       }
 
       &.text-breaker {
@@ -688,14 +692,14 @@
   }
 
   .subtitle {
-    @apply text-2xl mt-[30px];
+    @apply text-2xl leading-9 mt-[30px];
   }
 
   .accordion {
     @apply mt-[45px];
 
     &-button {
-      @apply shadow-none text-2xl text-grey relative flex;
+      @apply shadow-none text-2xl leading-9 text-grey relative flex;
       @apply items-center w-full py-[20px] px-[30px] mb-[10px] text-left justify-center lg:justify-start;
       @apply bg-[#E3F1FD] border-0 rounded-none transition focus:outline-none;
 
@@ -709,7 +713,7 @@
     }
 
     &-body {
-      @apply py-[20px] px-[30px] bg-[#E3F1FD] text-grey text-lg whitespace-pre-line mb-[10px];
+      @apply py-[20px] px-[30px] bg-[#E3F1FD] text-grey text-lg leading-7 whitespace-pre-line mb-[10px];
     }
 
     &-item {
@@ -753,7 +757,7 @@
     @apply flex flex-col items-center lg:items-start;
 
     h3 {
-      @apply text-2xl;
+      @apply text-2xl leading-9;
     }
 
     .social-media {
@@ -775,20 +779,20 @@
     }
 
     p {
-      @apply text-lg mt-[30px];
+      @apply text-lg leading-7 mt-[30px];
     }
 
     .terms {
-      @apply text-lg inline-block mt-[30px];
+      @apply text-lg leading-7 inline-block mt-[30px] cursor-pointer;
     }
 
     span {
-      @apply text-lg block mt-[50px];
+      @apply text-lg leading-7 block mt-[50px];
     }
   }
 
   .verified {
-    @apply flex items-center lg:items-end flex-col text-center lg:text-right text-lg mt-10 lg:mt-0;
+    @apply flex items-center lg:items-end flex-col text-center lg:text-right text-lg leading-7 mt-10 lg:mt-0;
 
     .logo {
       @apply max-w-[225px];
@@ -894,11 +898,11 @@
     }
 
     .details {
-      @apply text-lg text-black lg:pr-[40px];
+      @apply text-lg leading-7 text-black lg:pr-[40px];
     }
 
     .info {
-      @apply w-full text-lg justify-start lg:items-start;
+      @apply w-full text-lg leading-7 justify-start lg:items-start;
     }
 
     .mint-informations {

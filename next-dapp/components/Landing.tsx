@@ -1,5 +1,4 @@
 import { Menu, Transition } from '@headlessui/react'
-import { useRouter } from 'next/router'
 import { Fragment } from 'react'
 import {
   Discord,
@@ -8,12 +7,10 @@ import {
   LandingUnite,
   Logo,
   Medium,
-  Twitter,
+  Twitter
 } from './images'
 
 function Landing() {
-  const router = useRouter()
-
   return (
     <div className="landing" id="landing">
       <div className="landing-atom">
@@ -59,7 +56,7 @@ function Landing() {
                       >
                         <Menu.Items className="dropdown-list">
                           <Menu.Item>
-                            <a href="#" onClick={() => router.push('/minting')}>
+                            <a href="/minting" target="_blank">
                               mint
                             </a>
                           </Menu.Item>
@@ -120,7 +117,7 @@ function Landing() {
           </div>
 
           <nav className="nav-list">
-            <a href="#" onClick={() => router.push('/minting')}>
+            <a href="/minting" target="_blank">
               mint
             </a>
             <a href="#about">about</a>
@@ -181,9 +178,9 @@ function Landing() {
 
             <div className="landing-cta">
               <a
-                href="#"
+                href="/minting"
+                target="_blank"
                 className="button cta mint-to-help"
-                onClick={() => router.push('/minting')}
               >
                 Mint to Help
               </a>
@@ -197,8 +194,24 @@ function Landing() {
                 no whitelists. first come - first served
               </p>
               <p className="desc-small">
-                Join our Twitter & Discord communities and be the 1st to secure
-                a MetaHumanity Zyggo and inspire others to do the same!
+                Join our{' '}
+                <a
+                  href="https://twitter.com/ZyggoDistrikt"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Twitter
+                </a>{' '}
+                &{' '}
+                <a
+                  href="https://discord.gg/GPvMnZ84P6"
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  Discord
+                </a>{' '}
+                communities and be the 1st to secure a MetaHumanity Zyggo and
+                inspire others to do the same!
               </p>
             </div>
           </div>
