@@ -12,20 +12,22 @@ const CollectionConfig: CollectionConfigInterface = {
   contractName: "Zyggos4Ukraine",
   tokenName: "Zyggos 4 Ukraine",
   tokenSymbol: "ZYGGUA",
-  hiddenMetadataUri: "ipfs://__CID__/hidden.json",
-  maxSupply: 1111,
+  hiddenMetadataUri:
+    "ipfs://QmNwL837VXNN4Z8szV8Ep8frVdLW68fLUM12XiQRqBu56W/hidden.json",
+  maxSupply: 3333,
   whitelistSale: {
     price: 0.05,
     maxMintAmountPerTx: 1,
   },
   preSale: {
     price: 0.07,
-    maxMintAmountPerTx: 2,
+    maxMintAmountPerTx: 3,
   },
   publicSale: {
-    price: 0.35,
-    maxMintAmountPerTx: 1,
+    price: 0.19,
+    maxMintAmountPerTx: 3,
   },
+  maxMintOwner: 33,
   contractAddress: null,
   marketplaceIdentifier: "zyggos-ukraine",
   marketplaceConfig: openSea,
