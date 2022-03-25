@@ -783,7 +783,7 @@
     }
 
     .terms {
-      @apply text-lg leading-7 inline-block mt-[30px];
+      @apply text-lg leading-7 inline-block mt-[30px] cursor-pointer;
     }
 
     span {
