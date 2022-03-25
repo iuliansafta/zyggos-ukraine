@@ -1,6 +1,8 @@
-import { LandingUnite } from './images'
+import { useRouter } from 'next/router'
+import { ArrowLeft, LandingUnite } from './images'
 
 function Mint() {
+  const router = useRouter()
   return (
     <div className="mint">
       <div className="mint-hero">
@@ -44,7 +46,7 @@ function Mint() {
             </p>
           </div>
           <div className="info">
-            <span>MINTING informations:</span>
+            <span>MINTING INFO:</span>
             <ul className="mint-informations">
               <li>
                 <p>Mint Price</p>
