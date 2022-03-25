@@ -917,6 +917,10 @@
       }
     }
   }
+
+  .cannot-mint {
+    @apply pt-4 pb-4;
+  }
 }
 
 // terms modal
@@ -929,7 +933,7 @@
   }
 
   .modal-body {
-    @apply  relative z-[10] w-full max-w-[680px] m-[20px] h-[80vh] bg-white rounded-[4px] flex flex-col;
+    @apply relative z-[10] w-full max-w-[680px] m-[20px] h-[80vh] bg-white rounded-[4px] flex flex-col;
   }
 
   .modal-title {
@@ -958,5 +962,18 @@
     button {
       @apply border-black;
     }
+  }
+}
+
+.collection-not-ready {
+  @apply px-6 py-4;
+  @apply rounded-lg;
+
+  @apply text-sm;
+
+  .spinner {
+    @apply inline;
+    @apply -ml-1 mr-3 h-8 w-8 text-primary-500;
+    @apply animate-spin;
   }
 }
