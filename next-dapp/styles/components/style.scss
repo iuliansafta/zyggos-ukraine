@@ -95,13 +95,13 @@
       .button {
         @apply flex items-center justify-center;
         @apply mr-4 text-black text-xl no-underline;
-        @apply hover:text-white hover:bg-ucblue hover:border-ucblue;
+        @apply hover:text-white hover:bg-black hover:border-black;
         @apply border-2 border-black rounded-full;
         @apply px-10 py-4 mb-[20px] md:mb-0;
 
         &.mint-to-help {
           @apply text-white bg-ucblue border-ucblue;
-          @apply hover:border-black hover:text-black hover:bg-transparent;
+          @apply hover:border-black hover:text-white hover:bg-black;
         }
 
         &:hover {
@@ -303,7 +303,7 @@
         @apply inline-block mt-[30px];
         @apply mr-4 text-black text-xl no-underline;
         @apply text-white bg-ucblue border-ucblue;
-        @apply hover:border-black hover:text-black hover:bg-transparent;
+        @apply hover:border-black hover:text-white hover:bg-black;
         @apply border-2 rounded-full;
         @apply px-10 py-4 mb-[20px] md:mb-0;
       }
@@ -580,6 +580,7 @@
     .button {
       @apply px-[28px] py-[21px] mt-[30px] inline-block mb-[10px];
       @apply bg-orange text-xl text-white no-underline rounded-full;
+      @apply hover:bg-black;
     }
   }
 }
