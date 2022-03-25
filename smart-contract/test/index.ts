@@ -62,13 +62,23 @@ describe(CollectionConfig.contractName, function () {
     await contract.deployed();
   });
 
+  it("Owner should have a number of NFTs after deployment", async function () {
+    expect(await contract.totalSupply()).to.equal(
+      CollectionConfig.maxMintOwner
+    );
+
+    expect(await contract.displayOwnerSupply()).to.equal(
+      CollectionConfig.maxMintOwner
+    );
+  });
+
   it("Check initial data", async function () {
     expect(await contract.name()).to.equal(CollectionConfig.tokenName);
     expect(await contract.symbol()).to.equal(CollectionConfig.tokenSymbol);
-    expect(await contract.cost()).to.equal(getPrice(SaleType.WHITELIST, 1));
+    expect(await contract.cost()).to.equal(getPrice(SaleType.PUBLIC_SALE, 1));
     expect(await contract.maxSupply()).to.equal(CollectionConfig.maxSupply);
     expect(await contract.maxMintAmountPerTx()).to.equal(
-      CollectionConfig.whitelistSale.maxMintAmountPerTx
+      CollectionConfig.publicSale.maxMintAmountPerTx
     );
     expect(await contract.hiddenMetadataUri()).to.equal(
       CollectionConfig.hiddenMetadataUri
@@ -78,7 +88,7 @@ describe(CollectionConfig.contractName, function () {
     expect(await contract.whitelistMintEnabled()).to.equal(false);
     expect(await contract.revealed()).to.equal(false);
 
-    await expect(contract.tokenURI(1)).to.be.revertedWith(
+    await expect(contract.tokenURI(99999)).to.be.revertedWith(
       "ERC721Metadata: URI query for nonexistent token"
     );
   });
@@ -88,32 +98,32 @@ describe(CollectionConfig.contractName, function () {
     await expect(
       contract
         .connect(whitelistedUser)
-        .mint(1, { value: getPrice(SaleType.WHITELIST, 1) })
+        .mint(1, { value: getPrice(SaleType.PUBLIC_SALE, 1) })
     ).to.be.revertedWith("The contract is paused!");
     await expect(
       contract
         .connect(whitelistedUser)
-        .whitelistMint(1, [], { value: getPrice(SaleType.WHITELIST, 1) })
+        .whitelistMint(1, [], { value: getPrice(SaleType.PUBLIC_SALE, 1) })
     ).to.be.revertedWith("The whitelist sale is not enabled!");
     await expect(
       contract
         .connect(holder)
-        .mint(1, { value: getPrice(SaleType.WHITELIST, 1) })
+        .mint(1, { value: getPrice(SaleType.PUBLIC_SALE, 1) })
     ).to.be.revertedWith("The contract is paused!");
     await expect(
       contract
         .connect(holder)
-        .whitelistMint(1, [], { value: getPrice(SaleType.WHITELIST, 1) })
+        .whitelistMint(1, [], { value: getPrice(SaleType.PUBLIC_SALE, 1) })
     ).to.be.revertedWith("The whitelist sale is not enabled!");
     await expect(
       contract
         .connect(owner)
-        .mint(1, { value: getPrice(SaleType.WHITELIST, 1) })
+        .mint(1, { value: getPrice(SaleType.PUBLIC_SALE, 1) })
     ).to.be.revertedWith("The contract is paused!");
     await expect(
       contract
         .connect(owner)
-        .whitelistMint(1, [], { value: getPrice(SaleType.WHITELIST, 1) })
+        .whitelistMint(1, [], { value: getPrice(SaleType.PUBLIC_SALE, 1) })
     ).to.be.revertedWith("The whitelist sale is not enabled!");
 
     // The owner should always be able to run mintForAddress
@@ -130,7 +140,9 @@ describe(CollectionConfig.contractName, function () {
     ).to.be.revertedWith("Invalid mint amount!");
 
     // Check balances
-    expect(await contract.balanceOf(await owner.getAddress())).to.equal(1);
+    expect(await contract.balanceOf(await owner.getAddress())).to.equal(
+      CollectionConfig.maxMintOwner + 1
+    );
     expect(
       await contract.balanceOf(await whitelistedUser.getAddress())
     ).to.equal(1);
@@ -159,7 +171,7 @@ describe(CollectionConfig.contractName, function () {
       .whitelistMint(
         1,
         merkleTree.getHexProof(keccak256(await whitelistedUser.getAddress())),
-        { value: getPrice(SaleType.WHITELIST, 1) }
+        { value: getPrice(SaleType.PUBLIC_SALE, 1) }
       );
     // Trying to mint twice
     await expect(
@@ -168,7 +180,7 @@ describe(CollectionConfig.contractName, function () {
         .whitelistMint(
           1,
           merkleTree.getHexProof(keccak256(await whitelistedUser.getAddress())),
-          { value: getPrice(SaleType.WHITELIST, 1) }
+          { value: getPrice(SaleType.PUBLIC_SALE, 1) }
         )
     ).to.be.revertedWith("Address already claimed!");
     // Sending an invalid mint amount
@@ -180,7 +192,7 @@ describe(CollectionConfig.contractName, function () {
           merkleTree.getHexProof(keccak256(await whitelistedUser.getAddress())),
           {
             value: getPrice(
-              SaleType.WHITELIST,
+              SaleType.PUBLIC_SALE,
               await (await contract.maxMintAmountPerTx()).add(1).toNumber()
             ),
           }
@@ -193,7 +205,7 @@ describe(CollectionConfig.contractName, function () {
         .whitelistMint(
           1,
           merkleTree.getHexProof(keccak256(await whitelistedUser.getAddress())),
-          { value: getPrice(SaleType.WHITELIST, 1).sub(1) }
+          { value: getPrice(SaleType.PUBLIC_SALE, 1).sub(1) }
         )
     ).to.be.rejectedWith(
       Error,
@@ -206,7 +218,7 @@ describe(CollectionConfig.contractName, function () {
         .whitelistMint(
           1,
           merkleTree.getHexProof(keccak256(await whitelistedUser.getAddress())),
-          { value: getPrice(SaleType.WHITELIST, 1) }
+          { value: getPrice(SaleType.PUBLIC_SALE, 1) }
         )
     ).to.be.revertedWith("Invalid proof!");
     // Sending an invalid proof
@@ -216,14 +228,14 @@ describe(CollectionConfig.contractName, function () {
         .whitelistMint(
           1,
           merkleTree.getHexProof(keccak256(await holder.getAddress())),
-          { value: getPrice(SaleType.WHITELIST, 1) }
+          { value: getPrice(SaleType.PUBLIC_SALE, 1) }
         )
     ).to.be.revertedWith("Invalid proof!");
     // Sending no proof at all
     await expect(
       contract
         .connect(holder)
-        .whitelistMint(1, [], { value: getPrice(SaleType.WHITELIST, 1) })
+        .whitelistMint(1, [], { value: getPrice(SaleType.PUBLIC_SALE, 1) })
     ).to.be.revertedWith("Invalid proof!");
 
     // Pause whitelist sale
@@ -233,7 +245,9 @@ describe(CollectionConfig.contractName, function () {
     );
 
     // Check balances
-    expect(await contract.balanceOf(await owner.getAddress())).to.equal(1);
+    expect(await contract.balanceOf(await owner.getAddress())).to.equal(
+      CollectionConfig.maxMintOwner + 1
+    );
     expect(
       await contract.balanceOf(await whitelistedUser.getAddress())
     ).to.equal(2);
@@ -251,9 +265,9 @@ describe(CollectionConfig.contractName, function () {
     await contract
       .connect(holder)
       .mint(2, { value: getPrice(SaleType.PRE_SALE, 2) });
-    await contract
-      .connect(whitelistedUser)
-      .mint(1, { value: getPrice(SaleType.PRE_SALE, 1) });
+    // await contract
+    //   .connect(whitelistedUser)
+    //   .mint(1, { value: getPrice(SaleType.PRE_SALE, 1) });
     // Sending insufficient funds
     await expect(
       contract
@@ -334,15 +348,21 @@ describe(CollectionConfig.contractName, function () {
   });
 
   it("Wallet of owner", async function () {
-    expect(await contract.walletOfOwner(await owner.getAddress())).deep.equal([
-      BigNumber.from(1),
-    ]);
-    expect(
-      await contract.walletOfOwner(await whitelistedUser.getAddress())
-    ).deep.equal([BigNumber.from(2), BigNumber.from(3), BigNumber.from(6)]);
+    let ownerIndex = [];
+    for (let i = 1; i <= CollectionConfig.maxMintOwner + 1; i++) {
+      ownerIndex.push(BigNumber.from(i));
+    }
+
+    expect(await contract.walletOfOwner(await owner.getAddress())).deep.equal(
+      ownerIndex
+    );
+    // expect(
+    //   await contract.walletOfOwner(await whitelistedUser.getAddress())
+    // ).deep.equal([BigNumber.from(2), BigNumber.from(3), BigNumber.from(6)]);
+
     expect(await contract.walletOfOwner(await holder.getAddress())).deep.equal([
-      BigNumber.from(4),
-      BigNumber.from(5),
+      BigNumber.from(CollectionConfig.maxMintOwner + 1 + 1 + 1 + 1),
+      BigNumber.from(CollectionConfig.maxMintOwner + 1 + 1 + 1 + 1 + 1),
     ]);
     expect(
       await contract.walletOfOwner(await externalUser.getAddress())

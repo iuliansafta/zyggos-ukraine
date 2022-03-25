@@ -21,6 +21,7 @@ contract Zyggos4Ukraine is ERC721A, Ownable, ReentrancyGuard {
   uint256 public cost;
   uint256 public maxSupply;
   uint256 public maxMintAmountPerTx;
+  uint256 public maxMintAmountOwner;
 
   bool public paused = true;
   bool public whitelistMintEnabled = false;
@@ -32,12 +33,17 @@ contract Zyggos4Ukraine is ERC721A, Ownable, ReentrancyGuard {
     uint256 _cost,
     uint256 _maxSupply,
     uint256 _maxMintAmountPerTx,
+    uint256 _maxMintAmountOwner,
     string memory _hiddenMetadataUri
   ) ERC721A(_tokenName, _tokenSymbol) {
     cost = _cost;
     maxSupply = _maxSupply;
     maxMintAmountPerTx = _maxMintAmountPerTx;
     setHiddenMetadataUri(_hiddenMetadataUri);
+    
+    // Save some NFTs for team
+    maxMintAmountOwner = _maxMintAmountOwner;
+    _safeMint(owner(), _maxMintAmountOwner);
   }
 
   modifier mintCompliance(uint256 _mintAmount) {
@@ -149,6 +155,12 @@ contract Zyggos4Ukraine is ERC721A, Ownable, ReentrancyGuard {
 
   function setWhitelistMintEnabled(bool _state) public onlyOwner {
     whitelistMintEnabled = _state;
+  }
+
+  function displayOwnerSupply() public view returns (uint256) {
+    unchecked {
+      return maxMintAmountOwner;
+    }
   }
 
   function withdraw() public onlyOwner nonReentrant {
