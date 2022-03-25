@@ -1,10 +1,5 @@
 import { Disclosure, Transition } from '@headlessui/react'
 
-const zyggoLink = (
-  <a href="mailto:zyggodistrikt@gmail.com?subject = Hello = Message">
-    ZyggoDistrikt@gmail.com
-  </a>
-)
 const faqData = [
   {
     title: 'What is the mission of the project?',
@@ -39,7 +34,7 @@ const faqData = [
   {
     title: 'How can I help the cause for Ukraine?  ',
     body:
-      'You’re awesome! There are many ways to do that: \n- Join our social media channels and help us spread the word on the humanitarian Zyggo Collection. \n- Buy a MetaHumanity Zyggo NFT when launch the Public Mint on our website.\n- Tell your friends and crypto communities. \n- Reach out via ZyggoDistrikt@gmail.com and partner with us for this cause if you have a cool idea (e.g. fundraising initiatives, promo partnerships, etc.)',
+      'You’re awesome! There are many ways to do that: \n- Join our social media channels and help us spread the word on the humanitarian Zyggo Collection. \n- Buy a MetaHumanity Zyggo NFT when we launch the Public Mint on our website.\n- Tell your friends and crypto communities. \n- Reach out via ZyggoDistrikt[at]gmail.com and partner with us for this cause if you have a cool idea (e.g. fundraising initiatives, promo partnerships, etc.)',
     id: 'faq6',
   },
   {

@@ -1,11 +1,18 @@
-import { Menu, Transition } from '@headlessui/react';
-import { useRouter } from 'next/router';
+import { Menu, Transition } from '@headlessui/react'
+import { useRouter } from 'next/router'
 import { Fragment } from 'react'
-import { Discord, Discord2, Instagram, LandingUnite, Logo, Medium, Twitter } from './images'
-
+import {
+  Discord,
+  Discord2,
+  Instagram,
+  LandingUnite,
+  Logo,
+  Medium,
+  Twitter,
+} from './images'
 
 function Landing() {
-const router = useRouter()
+  const router = useRouter()
 
   return (
     <div className="landing" id="landing">
@@ -52,6 +59,11 @@ const router = useRouter()
                       >
                         <Menu.Items className="dropdown-list">
                           <Menu.Item>
+                            <a href="#" onClick={() => router.push('/minting')}>
+                              mint
+                            </a>
+                          </Menu.Item>
+                          <Menu.Item>
                             <a href="#about">about</a>
                           </Menu.Item>
                           <Menu.Item>
@@ -62,9 +74,6 @@ const router = useRouter()
                           </Menu.Item>
                           <Menu.Item>
                             <a href="#metastory">metastory</a>
-                          </Menu.Item>
-                          <Menu.Item>
-                            <a href="#" onClick={() => router.push('/minting')}>mint</a>
                           </Menu.Item>
                           <Menu.Item>
                             <a href="#faq">FAQs</a>
@@ -111,11 +120,13 @@ const router = useRouter()
           </div>
 
           <nav className="nav-list">
+            <a href="#" onClick={() => router.push('/minting')}>
+              mint
+            </a>
             <a href="#about">about</a>
             <a href="#manifesto">manifesto</a>
             <a href="#team">team</a>
             <a href="#metastory">metastory</a>
-            <a href="#" onClick={() => router.push('/minting')}>mint</a>
             <a href="#faq">FAQs</a>
           </nav>
 
@@ -169,7 +180,11 @@ const router = useRouter()
             </p>
 
             <div className="landing-cta">
-              <a href="#" className="button cta" onClick={() => router.push('/minting')}>
+              <a
+                href="#"
+                className="button cta mint-to-help"
+                onClick={() => router.push('/minting')}
+              >
                 Mint to Help
               </a>
               <a href="#" className="button cta">
