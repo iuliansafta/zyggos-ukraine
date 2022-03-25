@@ -22,7 +22,7 @@ function Roadmap() {
     },
     {
       image: '/images/roadmap-immerse.png',
-      text: 'Immerse | MetaEra membership perks & opportunities',
+      text: 'Immerse | Owning your Zyggo is your MetaPass to trending NFT investments and unlocks Membership privileges and rewards. You’ll play a big role in our roadmap and have a chance to shape the Zyggo Distrikt future!',
     },
   ]
 
@@ -47,8 +47,7 @@ function Roadmap() {
 
         <div className="body">
           <div className="web-tag">roadmap</div>
-          <h3>Empowering the Future</h3>
-          <p>Empowering the Future of NFT Experiences</p>
+          <h3>Empowering the Future of NFT Experiences</h3>
 
           <div className="roadmap-list">
             {roadmapList.map((roadmap, i) => (

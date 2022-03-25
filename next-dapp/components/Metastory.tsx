@@ -50,7 +50,7 @@ function Metastory() {
             >
               Be an ally and take over the metaverse!
             </a>
-            <p>Join our Discord community!</p>
+            <p>Join our Discord community before we launch.</p>
           </div>
         </div>
       </div>
