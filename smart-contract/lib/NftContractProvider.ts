@@ -17,6 +17,11 @@ export default class NftContractProvider {
       );
     }
 
+    console.log(
+      "provider",
+      await ethers.provider.getCode(CollectionConfig.contractAddress)
+    );
+
     if (
       (await ethers.provider.getCode(CollectionConfig.contractAddress)) === "0x"
     ) {
