@@ -841,6 +841,14 @@
     @apply bg-white text-ucblue;
   }
 
+  .error {
+    @apply fixed left-[50%] max-w-[600px] bottom-[40px] z-[1000] -ml-[200px] bg-black border-none p-[20px] text-white;
+
+    button {
+      @apply border-none px-[16px] py-[4px];
+    }
+  }
+
   .container {
     @apply flex justify-between items-center flex-col lg:flex-row;
   }
@@ -922,6 +930,10 @@
       }
     }
   }
+
+  .cannot-mint {
+    @apply pt-4 pb-4;
+  }
 }
 
 // terms modal
@@ -934,7 +946,7 @@
   }
 
   .modal-body {
-    @apply  relative z-[10] w-full max-w-[680px] m-[20px] h-[80vh] bg-white rounded-[4px] flex flex-col;
+    @apply relative z-[10] w-full max-w-[680px] m-[20px] h-[80vh] bg-white rounded-[4px] flex flex-col;
   }
 
   .modal-title {
@@ -963,5 +975,18 @@
     button {
       @apply border-black;
     }
+  }
+}
+
+.collection-not-ready {
+  @apply px-6 py-4;
+  @apply rounded-lg;
+
+  @apply text-sm;
+
+  .spinner {
+    @apply inline;
+    @apply -ml-1 mr-3 h-8 w-8 text-primary-500;
+    @apply animate-spin;
   }
 }

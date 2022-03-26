@@ -1,6 +1,9 @@
 const path = require("path");
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    externalDir: true,
+  },
   reactStrictMode: true,
   trailingSlash: true,
   webpackDevMiddleware: (config) => {
