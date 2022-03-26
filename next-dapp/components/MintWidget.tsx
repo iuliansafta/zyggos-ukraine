@@ -9,6 +9,7 @@ interface Props {
   isPaused: boolean;
   isWhitelistMintEnabled: boolean;
   isUserInWhitelist: boolean;
+  isMining: boolean;
   mintTokens(mintAmount: number): Promise<void>;
 }
 
@@ -59,6 +60,13 @@ export default class MintWidget extends React.Component<Props, State> {
   }
 
   render() {
+    if (this.props.isMining) {
+      return (
+        <div className="wallet-connect">
+          <button>MINTING</button>
+        </div>
+      );
+    }
     return (
       <>
         {this.canMint() ? (

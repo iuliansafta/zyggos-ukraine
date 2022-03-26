@@ -9,6 +9,9 @@ import MintWidget from "./MintWidget";
 
 import { LandingUnite } from "./images";
 
+import useWindowSize from "react-use/lib/useWindowSize";
+import Confetti from "react-confetti";
+
 const ContractAbi = require("../../smart-contract/artifacts/contracts/" +
   CollectionConfig.contractName +
   ".sol/" +
@@ -58,6 +61,8 @@ const Mint = () => {
   const [errorState, setErrorState] = useState<{ errorMessage: any }>({
     errorMessage: "",
   });
+  const [mining, setMining] = useState(false);
+  const [minted, setMinted] = useState(false);
 
   useEffect(() => {
     const initContract = async () => {
@@ -65,13 +70,37 @@ const Mint = () => {
         (await detectEthereumProvider()) as ExternalProvider;
 
       if (browserProvider?.isMetaMask !== true) {
+        setError(
+          <>
+            We were not able to detect <strong>MetaMask</strong>. We value{" "}
+            <strong>privacy and security</strong> a lot so we limit the wallet
+            options on the DAPP.
+            <br />
+            <br />
+            But don&apos;t worry! <span className="emoji">😃</span> You can
+            always interact with the smart-contract through{" "}
+            <a href={generateContractUrl()} target="_blank" rel="noreferrer">
+              {contractInfo.networkConfig.blockExplorer.name}
+            </a>{" "}
+            and{" "}
+            <strong>
+              we do our best to provide you with the best user experience
+              possible
+            </strong>
+            , even from there.
+            <br />
+            <br />
+            You can also get your <strong>Whitelist Proof</strong> manually,
+            using the tool below.
+          </>
+        );
       }
 
-      if (!provider) {
+      if (browserProvider && !provider) {
         setProvider(new ethers.providers.Web3Provider(browserProvider));
+        registerWalletEvents(browserProvider);
+        await initWallet();
       }
-      registerWalletEvents(browserProvider);
-      await initWallet();
     };
 
     initContract();
@@ -82,10 +111,22 @@ const Mint = () => {
       return;
     }
 
+    setMining(true);
+
     try {
-      await contract.mint(amount, {
+      const txn = await contract.mint(amount, {
         value: contractInfo.tokenPrice.mul(amount),
       });
+      await txn.wait();
+
+      refreshContractInfo();
+
+      setMining(false);
+      setMinted(true);
+
+      setTimeout(() => {
+        setMinted(false);
+      }, 7000);
     } catch (e) {
       setError(e);
     }
@@ -182,6 +223,28 @@ const Mint = () => {
       isPaused: await contractInstance.paused(),
       isWhitelistMintEnabled: await contractInstance.whitelistMintEnabled(),
       // isUserInWhitelist: Whitelist.contains(state.userAddress ?? ""),
+    };
+
+    setContractInfo((prevState) => {
+      return {
+        ...prevState,
+        ...contractInfoUpdated,
+      };
+    });
+  };
+
+  const refreshContractInfo = async (): Promise<void> => {
+    if (!contract) {
+      return;
+    }
+
+    const contractInfoUpdated = {
+      maxSupply: (await contract.maxSupply()).toNumber(),
+      totalSupply: (await contract.totalSupply()).toNumber(),
+      maxMintAmountPerTx: (await contract.maxMintAmountPerTx()).toNumber(),
+      tokenPrice: await contract.cost(),
+      isPaused: await contract.paused(),
+      isWhitelistMintEnabled: await contract.whitelistMintEnabled(),
     };
 
     setContractInfo((prevState) => {
@@ -295,6 +358,7 @@ const Mint = () => {
                         }
                         isUserInWhitelist={contractInfo.isUserInWhitelist}
                         mintTokens={(mintAmount) => mintTokens(mintAmount)}
+                        isMining={mining}
                       />
                     ) : (
                       <div className="collection-sold-out">
@@ -412,8 +476,14 @@ const Mint = () => {
           </div>
         </div>
       </div>
+      {minted && <ConfettiWidget />}
     </div>
   );
+};
+
+const ConfettiWidget = () => {
+  const { width, height } = useWindowSize();
+  return <Confetti width={width} height={height} />;
 };
 
 export default Mint;
