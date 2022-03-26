@@ -22,7 +22,7 @@ function Roadmap() {
     },
     {
       image: '/images/roadmap-immerse.png',
-      text: 'Immerse | Owning your Zyggo is your MetaPass to trending NFT investments and unlocks Membership privileges and rewards. You’ll play a big role in our roadmap and have a chance to shape the Zyggo Distrikt future!',
+      text: 'Immerse | MetaEra membership perks & opportunities',
     },
   ]
 
@@ -60,9 +60,9 @@ function Roadmap() {
             ))}
           </div>
           <p className="small">
-            Owning your Zyggo is your pass to trending NFT investments and
-            unlocks Membership perks. You&apos;ll play a big role in our road
-            map and have a chance to shape the Zyggo Distrikt future!
+            Owning your Zyggo is your MetaPass to trending NFT investments and
+            unlocks Membership privileges and rewards. You’ll play a big role in
+            our roadmap and have a chance to shape the Zyggo Distrikt future!
           </p>
 
           <p className="text-breaker">

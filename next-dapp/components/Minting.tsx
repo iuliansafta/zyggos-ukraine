@@ -446,7 +446,7 @@ const Mint = () => {
             </p>
           </div>
           <div className="info">
-            <span>MINTING informations:</span>
+            <span>MINTING INFO:</span>
             <ul className="mint-informations">
               <li>
                 <p>Mint Price</p>

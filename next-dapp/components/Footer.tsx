@@ -53,7 +53,6 @@ function Footer({ page }: { page: string }) {
             </a>
           </p>
           <a
-            href="javascript:void(0)"
             className="terms"
             onClick={() => openModal()}
           >

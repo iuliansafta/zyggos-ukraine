@@ -1,8 +1,4 @@
-import { useRouter } from 'next/router'
-
 function Meet() {
-  const router = useRouter()
-
   return (
     <div className="meet" id="about">
       <div className="container">
@@ -19,9 +15,9 @@ function Meet() {
               collectibles are unique, some rarer than others.
             </p>
             <a
-              href="#"
+              href="/minting"
+              target="_blank"
               className="button cta"
-              onClick={() => router.push('/minting')}
             >
               MINT a Zyggo
             </a>
