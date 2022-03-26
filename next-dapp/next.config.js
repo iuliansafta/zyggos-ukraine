@@ -1,8 +1,7 @@
 const path = require("path");
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  skipTypescriptChecking: true,
-  transpileOnly: true,
+  ignoreBuildErrors: true,
   experimental: {
     externalDir: true,
   },
