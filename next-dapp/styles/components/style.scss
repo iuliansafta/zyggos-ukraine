@@ -80,7 +80,7 @@
     }
 
     .desc-large {
-      @apply text-2xl leading-9;
+      @apply text-2xl lg:leading-9;
       @apply mt-2;
     }
 
@@ -313,13 +313,13 @@
       }
 
       p {
-        @apply text-grey text-2xl leading-9 mt-10;
+        @apply text-grey text-2xl lg:leading-9 mt-10;
       }
     }
   }
 
   .container > p {
-    @apply text-grey text-lg leading-7 mt-10;
+    @apply text-grey text-lg lg:leading-7 mt-10;
   }
 
   &-star {
@@ -359,11 +359,11 @@
     }
 
     h4 {
-      @apply text-2xl leading-9;
+      @apply text-2xl lg:leading-9;
     }
 
     p {
-      @apply mt-[20px] text-grey text-lg leading-7;
+      @apply mt-[20px] text-grey text-lg lg:leading-7;
     }
   }
 
@@ -384,7 +384,7 @@
   }
 
   span {
-    @apply text-lg leading-7;
+    @apply text-lg lg:leading-7;
   }
 
   &-pose {
@@ -412,7 +412,7 @@
 
       &.manifesto-text {
         @apply px-[10px] lg:px-[30px] rounded-[15px] lg:rounded-[30px];
-        @apply text-white text-sm lg:text-2xl leading-9 text-center;
+        @apply text-white text-sm lg:text-2xl lg:leading-9 text-center;
         @apply flex items-center justify-center;
       }
 
@@ -461,7 +461,7 @@
   }
 
   .container > p {
-    @apply text-grey text-2xl leading-9 mt-[10px];
+    @apply text-grey text-2xl lg:leading-9 mt-[10px];
   }
 
   &-list {
@@ -493,7 +493,7 @@
       }
 
       h5 {
-        @apply text-lg leading-7 whitespace-pre-line;
+        @apply text-lg lg:leading-7 whitespace-pre-line;
       }
 
       p {
@@ -546,7 +546,7 @@
     @apply flex flex-wrap mt-[46px];
 
     div {
-      @apply lg:w-[50%] text-2xl leading-9 leading-9;
+      @apply lg:w-[50%] text-2xl lg:leading-9 lg:leading-9;
 
       p {
         @apply mb-[40px];
@@ -597,11 +597,11 @@
       @apply lg:pl-[30px];
 
       h4 {
-        @apply mt-10 lg:mt-0 text-grey text-2xl leading-9;
+        @apply mt-10 lg:mt-0 text-grey text-2xl lg:leading-9;
       }
 
       p {
-        @apply text-grey text-lg leading-7;
+        @apply text-grey text-lg lg:leading-7;
       }
     }
   }
@@ -614,10 +614,10 @@
     }
 
     p {
-      @apply text-grey text-2xl leading-9;
+      @apply text-grey text-2xl lg:leading-9;
 
       &.small {
-        @apply text-lg leading-7 mb-[14px];
+        @apply text-lg lg:leading-7 mb-[14px];
       }
 
       &.text-breaker {
@@ -693,14 +693,14 @@
   }
 
   .subtitle {
-    @apply text-2xl leading-9 mt-[30px];
+    @apply text-2xl lg:leading-9 mt-[30px];
   }
 
   .accordion {
     @apply mt-[45px];
 
     &-button {
-      @apply shadow-none text-2xl leading-9 text-grey relative flex;
+      @apply shadow-none text-2xl lg:leading-9 text-grey relative flex;
       @apply items-center w-full py-[20px] px-[30px] mb-[10px] text-left justify-center lg:justify-start;
       @apply bg-[#E3F1FD] border-0 rounded-none transition focus:outline-none;
 
@@ -714,7 +714,7 @@
     }
 
     &-body {
-      @apply py-[20px] px-[30px] bg-[#E3F1FD] text-grey text-lg leading-7 whitespace-pre-line mb-[10px];
+      @apply py-[20px] px-[30px] bg-[#E3F1FD] text-grey text-lg lg:leading-7 whitespace-pre-line mb-[10px];
     }
 
     &-item {
@@ -758,7 +758,7 @@
     @apply flex flex-col items-center lg:items-start;
 
     h3 {
-      @apply text-2xl leading-9;
+      @apply text-2xl lg:leading-9;
     }
 
     .social-media {
@@ -780,20 +780,20 @@
     }
 
     p {
-      @apply text-lg leading-7 mt-[30px];
+      @apply text-lg lg:leading-7 mt-[30px];
     }
 
     .terms {
-      @apply text-lg leading-7 inline-block mt-[30px] cursor-pointer;
+      @apply text-lg lg:leading-7 inline-block mt-[30px] cursor-pointer;
     }
 
     span {
-      @apply text-lg leading-7 block mt-[50px];
+      @apply text-lg lg:leading-7 block mt-[50px];
     }
   }
 
   .verified {
-    @apply flex items-center lg:items-end flex-col text-center lg:text-right text-lg leading-7 mt-10 lg:mt-0;
+    @apply flex items-center lg:items-end flex-col text-center lg:text-right text-lg lg:leading-7 mt-10 lg:mt-0;
 
     .logo {
       @apply max-w-[225px];
@@ -899,11 +899,11 @@
     }
 
     .details {
-      @apply text-lg leading-7 text-black lg:pr-[40px];
+      @apply text-lg lg:leading-7 text-black lg:pr-[40px];
     }
 
     .info {
-      @apply w-full text-lg leading-7 justify-start lg:items-start;
+      @apply w-full text-lg lg:leading-7 justify-start lg:items-start;
     }
 
     .mint-informations {
