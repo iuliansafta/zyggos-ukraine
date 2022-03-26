@@ -836,6 +836,14 @@
     @apply bg-white text-ucblue;
   }
 
+  .error {
+    @apply fixed left-[50%] max-w-[600px] bottom-[40px] z-[1000] -ml-[200px] bg-black border-none p-[20px] text-white;
+
+    button {
+      @apply border-none px-[16px] py-[4px];
+    }
+  }
+
   .container {
     @apply flex justify-between items-center flex-col lg:flex-row;
   }
