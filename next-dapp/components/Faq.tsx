@@ -46,7 +46,7 @@ const faqData = [
   {
     title: 'Will Zyggo Distrikt launch other NFT collections?',
     body:
-      'We’re humbled by your interest! We started this creative journey by envisioning a transformational NFT invasion collection that helps crypto enthusiast access great market opportunities, all in a fun, unconventional environment. Given the critical war situation in Ukraine we hit the brakes and rerouted all our efforts to empower the crypto community with a quick way to stand by Ukrainian victims. We will launch our initial collection very soon, this year. Keep close for news on the upcoming Zyggo collection! ',
+      'We’re humbled by your interest! We started this creative journey by envisioning a transformational NFT invasion collection that helps crypto enthusiasts access awesome NFT market opportunities, all in a wacky, unconventional environment. Given the critical war situation in Ukraine we hit the brakes and rerouted all our efforts to empower the crypto community with a quick way to stand by Ukrainian victims. We will launch our initial collection (and more) very soon, this year. Keep close for news on the upcoming Zyggo collection!',
     id: 'faq8',
   },
 ]
