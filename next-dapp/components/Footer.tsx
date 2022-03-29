@@ -39,7 +39,7 @@ function Footer({ page }: { page: string }) {
               <Medium />
             </a>
             <a
-              href="https://discord.gg/GPvMnZ84P6"
+              href="https://discord.gg/pBzznn5rs7"
               rel="noreferrer"
               target="_blank"
             >
