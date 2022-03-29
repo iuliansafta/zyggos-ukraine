@@ -4,7 +4,7 @@ function Meet() {
       <div className="container">
         <div className="desc">
           <div className="desc-img">
-            <img src="/images/meet-zyggo.png" alt="meet zyggos" />
+            <img src="/images/zd-animation.gif" alt="meet zyggos" />
           </div>
           <div className="desc-body">
             <div className="web-tag">nft collection</div>

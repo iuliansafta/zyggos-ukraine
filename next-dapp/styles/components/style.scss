@@ -866,10 +866,14 @@
   }
 
   .wallet-connect {
-    @apply mt-[40px];
+    @apply flex flex-col sm:flex-row items-center mt-[40px] mb-[20px] justify-center lg:justify-start;
 
     button {
-      @apply text-xl font-normal text-white bg-transparent mb-[20px] px-[62px] py-[21px] hover:bg-white hover:text-ucblue;
+      @apply text-xl font-normal text-white bg-transparent px-[62px] py-[21px] hover:bg-white hover:text-ucblue;
+
+      &.disabled-button {
+        @apply cursor-default opacity-60 hover:bg-transparent hover:text-white;
+      }
     }
   }
 
@@ -933,6 +937,22 @@
 
   .cannot-mint {
     @apply pt-4 pb-4;
+  }
+
+  .no-of-mints {
+    @apply flex items-center mb-[30px] sm:mb-0 sm:mr-[50px];
+
+    button {
+      @apply w-[60px] h-[60px] p-0 flex items-center justify-center mb-0 rounded-full leading-[0.6] ml-0;
+    }
+
+    .amount {
+      @apply flex flex-col items-center px-[24px] text-2xl ;
+
+      span {
+        @apply text-xs;
+      }
+    }
   }
 }
 
