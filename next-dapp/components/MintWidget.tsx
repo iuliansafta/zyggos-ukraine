@@ -63,7 +63,7 @@ export default class MintWidget extends React.Component<Props, State> {
     if (this.props.isMining) {
       return (
         <div className="wallet-connect">
-          <button>MINTING</button>
+          <button disabled className="disabled-button">MINTING...</button>
         </div>
       );
     }
@@ -71,6 +71,14 @@ export default class MintWidget extends React.Component<Props, State> {
       <>
         {this.canMint() ? (
           <div className="wallet-connect">
+            <div className="no-of-mints">
+              <button onClick={() => this.decrementMintAmount()}>-</button>
+              <div className="amount">
+                <p>{this.state.mintAmount}</p>
+                <span>NFT</span>
+              </div>
+              <button onClick={() => this.incrementMintAmount()}>+</button>
+            </div>
             <button onClick={() => this.mint()}>MINT</button>
           </div>
         ) : (
