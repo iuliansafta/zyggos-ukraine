@@ -87,11 +87,6 @@ function Landing() {
                       >
                         <Menu.Items className="dropdown-list">
                           <Menu.Item>
-                            <a href="/minting" target="_blank">
-                              mint
-                            </a>
-                          </Menu.Item>
-                          <Menu.Item>
                             <a href="#about">about</a>
                           </Menu.Item>
                           <Menu.Item>
@@ -148,9 +143,6 @@ function Landing() {
           </div>
 
           <nav className="nav-list">
-            <a href="/minting" target="_blank">
-              mint
-            </a>
             <a href="#about">about</a>
             <a href="#manifesto">manifesto</a>
             <a href="#team">team</a>
