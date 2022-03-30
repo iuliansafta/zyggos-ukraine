@@ -14,13 +14,6 @@ function Meet() {
               inspired by Ukrainian culture and Peace symbolism. All digital
               collectibles are unique, some rarer than others.
             </p>
-            <a
-              href="/minting"
-              target="_blank"
-              className="button cta"
-            >
-              MINT a Zyggo
-            </a>
           </div>
         </div>
         <p>

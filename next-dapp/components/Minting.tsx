@@ -408,7 +408,6 @@ const Mint = () => {
 
             {!isWalletConnected() && !isSoldOut() ? (
               <div className="wallet-connect">
-                {/* <button onClick={connectWallet}>Connect Wallet</button> */}
                 <button disabled className="disabled-button">Mint Soon</button>
               </div>
             ) : null}

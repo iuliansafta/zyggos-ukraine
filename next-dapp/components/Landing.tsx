@@ -1,4 +1,5 @@
 import { Menu, Transition } from '@headlessui/react'
+import Countdown from 'react-countdown'
 import { Fragment } from 'react'
 import {
   Discord,
@@ -7,10 +8,50 @@ import {
   LandingUnite,
   Logo,
   Medium,
-  Twitter
+  Twitter,
 } from './images'
 
 function Landing() {
+  const renderer = ({
+    days,
+    hours,
+    minutes,
+    completed,
+  }: {
+    days: any
+    hours: any
+    minutes: any
+    completed: any
+  }) => {
+    if (completed) {
+      return (
+        <a href="/minting" target="_blank" className="button cta mint-to-help">
+          Mint to Help
+        </a>
+      )
+    } else {
+      return (
+        <div className="countdown">
+          <p>SALE STARTS IN</p>
+          <div className="timer">
+            <div>
+              <span>{days}</span>
+              <p>DAYS</p>
+            </div>
+            <div>
+              <span>{hours}</span>
+              <p>HOURS</p>
+            </div>
+            <div>
+              <span>{minutes}</span>
+              <p>MINUTES</p>
+            </div>
+          </div>
+        </div>
+      )
+    }
+  }
+
   return (
     <div className="landing" id="landing">
       <div className="landing-atom">
@@ -55,11 +96,6 @@ function Landing() {
                         leaveTo="transform opacity-0 scale-95"
                       >
                         <Menu.Items className="dropdown-list">
-                          <Menu.Item>
-                            <a href="/minting" target="_blank">
-                              mint
-                            </a>
-                          </Menu.Item>
                           <Menu.Item>
                             <a href="#about">about</a>
                           </Menu.Item>
@@ -117,9 +153,6 @@ function Landing() {
           </div>
 
           <nav className="nav-list">
-            <a href="/minting" target="_blank">
-              mint
-            </a>
             <a href="#about">about</a>
             <a href="#manifesto">manifesto</a>
             <a href="#team">team</a>
@@ -177,13 +210,12 @@ function Landing() {
             </p>
 
             <div className="landing-cta">
-              <a
-                href="/minting"
-                target="_blank"
-                className="button cta mint-to-help"
-              >
-                Mint to Help
-              </a>
+              <Countdown
+                date={new Date('2022-04-02T21:00:00')}
+                renderer={renderer}
+                daysInHours={false}
+              />
+
               <a href="#" className="button cta">
                 <Discord2 /> &nbsp; Join our Discord
               </a>
