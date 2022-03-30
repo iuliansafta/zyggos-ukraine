@@ -12,7 +12,17 @@ import {
 } from './images'
 
 function Landing() {
-  const renderer = ({ days, hours, minutes, completed }) => {
+  const renderer = ({
+    days,
+    hours,
+    minutes,
+    completed,
+  }: {
+    days: any
+    hours: any
+    minutes: any
+    completed: any
+  }) => {
     if (completed) {
       return (
         <a href="/minting" target="_blank" className="button cta mint-to-help">
@@ -200,7 +210,11 @@ function Landing() {
             </p>
 
             <div className="landing-cta">
-              <Countdown date={new Date('2022-04-02T21:00:00')} renderer={renderer} daysInHours={false}/>
+              <Countdown
+                date={new Date('2022-04-02T21:00:00')}
+                renderer={renderer}
+                daysInHours={false}
+              />
 
               <a href="#" className="button cta">
                 <Discord2 /> &nbsp; Join our Discord
