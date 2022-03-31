@@ -615,13 +615,25 @@
   @apply pt-[50px] pb-[100px] lg:pb-[200px] px-[20px];
 
   .heart-invasion {
-    @apply flex flex-wrap justify-center lg:flex-nowrap lg:justify-start;
+    @apply flex flex-wrap justify-center text-center lgi:text-left lgi:flex-nowrap lgi:justify-start;
+
+    .image {
+      @apply flex items-center mb-[23px] lgi:mb-0;
+    }
+
+    span {
+      @apply text-5xl px-[20px];
+
+      &.equals {
+        @apply hidden lgi:block;
+      }
+    }
 
     .desc {
-      @apply lg:pl-[30px];
+      @apply max-w-[780px] lgi:pl-[20px];
 
       h4 {
-        @apply mt-10 lg:mt-0 text-grey text-2xl lg:leading-9;
+        @apply mt-10 lg:mt-0 text-2xl lg:leading-9;
       }
 
       p {
