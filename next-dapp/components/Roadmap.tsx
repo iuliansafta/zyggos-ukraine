@@ -32,6 +32,9 @@ function Roadmap() {
         <div className="heart-invasion">
           <div className="image">
             <img src="/images/ua-heart.png" alt="heart" />
+            <span>+</span>
+            <img src="/images/ua-logo.png" alt="logo" />
+            <span className="equals">=</span>
           </div>
           <div className="desc">
             <h4>

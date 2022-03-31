@@ -114,13 +114,6 @@ function Landing() {
                           <Menu.Item>
                             <div className="social">
                               <a
-                                href="https://www.instagram.com/zyggodistrikt/"
-                                rel="noreferrer"
-                                target="_blank"
-                              >
-                                <Instagram />
-                              </a>
-                              <a
                                 href="https://twitter.com/ZyggoDistrikt"
                                 rel="noreferrer"
                                 target="_blank"
@@ -133,6 +126,13 @@ function Landing() {
                                 target="_blank"
                               >
                                 <Discord />
+                              </a>
+                              <a
+                                href="https://www.instagram.com/zyggodistrikt/"
+                                rel="noreferrer"
+                                target="_blank"
+                              >
+                                <Instagram />
                               </a>
                               <a
                                 href="https://medium.com/@zyggodistrikt"
@@ -162,13 +162,6 @@ function Landing() {
 
           <div className="social-media">
             <a
-              href="https://www.instagram.com/zyggodistrikt/"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <Instagram />
-            </a>
-            <a
               href="https://twitter.com/ZyggoDistrikt"
               rel="noreferrer"
               target="_blank"
@@ -181,6 +174,13 @@ function Landing() {
               target="_blank"
             >
               <Discord />
+            </a>
+            <a
+              href="https://www.instagram.com/zyggodistrikt/"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <Instagram />
             </a>
             <a
               href="https://medium.com/@zyggodistrikt"
