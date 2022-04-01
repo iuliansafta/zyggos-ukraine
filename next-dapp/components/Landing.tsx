@@ -10,6 +10,7 @@ import {
   Medium,
   Twitter,
 } from './images'
+import { Link, animateScroll as scroll } from 'react-scroll'
 
 function Landing() {
   const renderer = ({
@@ -97,19 +98,59 @@ function Landing() {
                       >
                         <Menu.Items className="dropdown-list">
                           <Menu.Item>
-                            <a href="#about">about</a>
+                            <Link
+                              to="about"
+                              spy={true}
+                              smooth={true}
+                              offset={-70}
+                              duration={500}
+                            >
+                              about
+                            </Link>
                           </Menu.Item>
                           <Menu.Item>
-                            <a href="#manifesto">manifesto</a>
+                            <Link
+                              to="manifesto"
+                              spy={true}
+                              smooth={true}
+                              offset={-70}
+                              duration={500}
+                            >
+                              manifesto
+                            </Link>
                           </Menu.Item>
                           <Menu.Item>
-                            <a href="#team">team</a>
+                            <Link
+                              to="team"
+                              spy={true}
+                              smooth={true}
+                              offset={-70}
+                              duration={500}
+                            >
+                              team
+                            </Link>
                           </Menu.Item>
                           <Menu.Item>
-                            <a href="#metastory">metastory</a>
+                            <Link
+                              to="metastory"
+                              spy={true}
+                              smooth={true}
+                              offset={-70}
+                              duration={500}
+                            >
+                              metastory
+                            </Link>
                           </Menu.Item>
                           <Menu.Item>
-                            <a href="#faq">FAQs</a>
+                            <Link
+                              to="faq"
+                              spy={true}
+                              smooth={true}
+                              offset={-70}
+                              duration={500}
+                            >
+                              FAQs
+                            </Link>
                           </Menu.Item>
                           <Menu.Item>
                             <div className="social">
@@ -121,7 +162,7 @@ function Landing() {
                                 <Twitter />
                               </a>
                               <a
-                                href="https://discord.gg/pBzznn5rs7"
+                                href="https://discord.com/invite/pBzznn5rs7"
                                 rel="noreferrer"
                                 target="_blank"
                               >
@@ -153,11 +194,45 @@ function Landing() {
           </div>
 
           <nav className="nav-list">
-            <a href="#about">about</a>
-            <a href="#manifesto">manifesto</a>
-            <a href="#team">team</a>
-            <a href="#metastory">metastory</a>
-            <a href="#faq">FAQs</a>
+            <Link
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              about
+            </Link>
+            <Link
+              to="manifesto"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              manifesto
+            </Link>
+            <Link
+              to="team"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              team
+            </Link>
+            <Link
+              to="metastory"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              metastory
+            </Link>
+            <Link to="faq" spy={true} smooth={true} offset={-70} duration={500}>
+              FAQs
+            </Link>
           </nav>
 
           <div className="social-media">
@@ -169,7 +244,7 @@ function Landing() {
               <Twitter />
             </a>
             <a
-              href="https://discord.gg/pBzznn5rs7"
+              href="https://discord.com/invite/pBzznn5rs7"
               rel="noreferrer"
               target="_blank"
             >
@@ -216,7 +291,12 @@ function Landing() {
                 daysInHours={false}
               />
 
-              <a href="#" className="button cta">
+              <a
+                href="https://discord.com/invite/pBzznn5rs7"
+                rel="noreferrer"
+                target="_blank"
+                className="button cta"
+              >
                 <Discord2 /> &nbsp; Join our Discord
               </a>
             </div>
@@ -236,7 +316,7 @@ function Landing() {
                 </a>{' '}
                 &{' '}
                 <a
-                  href="https://discord.gg/pBzznn5rs7"
+                  href="https://discord.com/invite/pBzznn5rs7"
                   rel="noreferrer"
                   target="_blank"
                 >

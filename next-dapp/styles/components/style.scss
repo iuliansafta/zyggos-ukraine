@@ -314,7 +314,7 @@
   @apply overflow-hidden relative text-center lg:text-left;
 
   .desc {
-    @apply flex lg:flex-row flex-col items-end;
+    @apply flex lg:flex-row flex-col items-center lg:items-end;
 
     &-img {
       @apply max-w-[300px] lg:max-w-full lg:min-w-[600px];

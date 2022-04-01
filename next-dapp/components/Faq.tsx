@@ -68,7 +68,7 @@ function Faq() {
           </a>{' '}
           and{' '}
           <a
-            href="https://discord.gg/pBzznn5rs7"
+            href="https://discord.com/invite/pBzznn5rs7"
             rel="noreferrer"
             target="_blank"
           >
