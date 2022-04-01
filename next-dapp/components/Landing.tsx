@@ -10,9 +10,11 @@ import {
   Medium,
   Twitter,
 } from './images'
-import { Link, animateScroll as scroll } from 'react-scroll'
+import { Link } from 'react-scroll'
 
 function Landing() {
+  const launchDate = new Date('2022-04-02T21:00:00')
+  
   const renderer = ({
     days,
     hours,
@@ -50,6 +52,18 @@ function Landing() {
           </div>
         </div>
       )
+    }
+  }
+
+  const linkRenderer = ({ completed }: { completed: any }) => {
+    if (completed) {
+      return (
+        <a href="/minting" target="_blank">
+          mint
+        </a>
+      )
+    } else {
+      return null
     }
   }
 
@@ -97,6 +111,13 @@ function Landing() {
                         leaveTo="transform opacity-0 scale-95"
                       >
                         <Menu.Items className="dropdown-list">
+                          <Menu.Item>
+                            <Countdown
+                              date={launchDate}
+                              renderer={linkRenderer}
+                              daysInHours={false}
+                            />
+                          </Menu.Item>
                           <Menu.Item>
                             <Link
                               to="about"
@@ -194,6 +215,11 @@ function Landing() {
           </div>
 
           <nav className="nav-list">
+            <Countdown
+              date={launchDate}
+              renderer={linkRenderer}
+              daysInHours={false}
+            />
             <Link
               to="about"
               spy={true}
@@ -286,7 +312,7 @@ function Landing() {
 
             <div className="landing-cta">
               <Countdown
-                date={new Date('2022-04-02T21:00:00')}
+                date={launchDate}
                 renderer={renderer}
                 daysInHours={false}
               />

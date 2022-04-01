@@ -41,7 +41,7 @@
     @apply 2xl:mt-14 2xl:flex-col 2xl:mr-0;
 
     a {
-      @apply text-black no-underline hover:text-ucblue text-xl;
+      @apply text-black no-underline hover:text-ucblue text-xl cursor-pointer;
       @apply px-3 py-1;
     }
   }

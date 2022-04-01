@@ -1,4 +1,18 @@
+import Countdown from 'react-countdown'
+
 function Meet() {
+  const renderer = ({ completed }: { completed: any }) => {
+    if (completed) {
+      return (
+        <a href="/minting" target="_blank" className="button cta">
+          MINT a Zyggo
+        </a>
+      )
+    } else {
+      return null
+    }
+  }
+
   return (
     <div className="meet" id="about">
       <div className="container">
@@ -14,6 +28,12 @@ function Meet() {
               inspired by Ukrainian culture and Peace symbolism. All digital
               collectibles are unique, some rarer than others.
             </p>
+
+            <Countdown
+              date={new Date('2022-04-02T21:00:00')}
+              renderer={renderer}
+              daysInHours={false}
+            />
           </div>
         </div>
         <p>
