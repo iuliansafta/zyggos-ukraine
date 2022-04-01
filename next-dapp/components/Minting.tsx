@@ -1,41 +1,40 @@
-import React, { useState, useEffect } from "react";
-import { ethers, BigNumber } from "ethers";
-import { ExternalProvider, Web3Provider } from "@ethersproject/providers";
-import NftContractType from "../lib/NftContractType";
-import detectEthereumProvider from "@metamask/detect-provider";
-import NetworkConfigInterface from "../../smart-contract/lib/NetworkConfigInterface";
-import CollectionConfig from "../../smart-contract/config/CollectionConfig";
-import MintWidget from "./MintWidget";
+import React, { useState, useEffect } from 'react'
+import { ethers, BigNumber } from 'ethers'
+import { ExternalProvider, Web3Provider } from '@ethersproject/providers'
+import NftContractType from '../lib/NftContractType'
+import detectEthereumProvider from '@metamask/detect-provider'
+import NetworkConfigInterface from '../../smart-contract/lib/NetworkConfigInterface'
+import CollectionConfig from '../../smart-contract/config/CollectionConfig'
+import MintWidget from './MintWidget'
 import Countdown from 'react-countdown'
 
+import { LandingUnite } from './images'
 
-import { LandingUnite } from "./images";
+import useWindowSize from 'react-use/lib/useWindowSize'
+import Confetti from 'react-confetti'
 
-import useWindowSize from "react-use/lib/useWindowSize";
-import Confetti from "react-confetti";
-
-const ContractAbi = require("../../smart-contract/artifacts/contracts/" +
+const ContractAbi = require('../../smart-contract/artifacts/contracts/' +
   CollectionConfig.contractName +
-  ".sol/" +
+  '.sol/' +
   CollectionConfig.contractName +
-  ".json").abi;
+  '.json').abi
 
 interface Props {}
 
 interface State {
-  userAddress: string | null;
-  network: ethers.providers.Network | null;
-  networkConfig: NetworkConfigInterface;
-  totalSupply: number;
-  maxSupply: number;
-  maxMintAmountPerTx: number;
-  tokenPrice: BigNumber;
-  isPaused: boolean;
-  isWhitelistMintEnabled: boolean;
-  isUserInWhitelist: boolean;
-  merkleProofManualAddress: string;
-  merkleProofManualAddressFeedbackMessage: string | JSX.Element | null;
-  errorMessage: string | JSX.Element | null;
+  userAddress: string | null
+  network: ethers.providers.Network | null
+  networkConfig: NetworkConfigInterface
+  totalSupply: number
+  maxSupply: number
+  maxMintAmountPerTx: number
+  tokenPrice: BigNumber
+  isPaused: boolean
+  isWhitelistMintEnabled: boolean
+  isUserInWhitelist: boolean
+  merkleProofManualAddress: string
+  merkleProofManualAddressFeedbackMessage: string | JSX.Element | null
+  errorMessage: string | JSX.Element | null
 }
 
 const defaultState: State = {
@@ -49,42 +48,41 @@ const defaultState: State = {
   isPaused: true,
   isWhitelistMintEnabled: false,
   isUserInWhitelist: false,
-  merkleProofManualAddress: "",
+  merkleProofManualAddress: '',
   merkleProofManualAddressFeedbackMessage: null,
   errorMessage: null,
-};
+}
 
 const Mint = () => {
-  const [provider, setProvider] = useState<Web3Provider | undefined>(undefined);
+  const [provider, setProvider] = useState<Web3Provider | undefined>(undefined)
   const [contract, setContract] = useState<NftContractType | undefined>(
-    undefined
-  );
-  const [contractInfo, setContractInfo] = useState<State>(defaultState);
+    undefined,
+  )
+  const [contractInfo, setContractInfo] = useState<State>(defaultState)
   const [errorState, setErrorState] = useState<{ errorMessage: any }>({
-    errorMessage: "",
-  });
-  const [mining, setMining] = useState(false);
-  const [minted, setMinted] = useState(false);
+    errorMessage: '',
+  })
+  const [mining, setMining] = useState(false)
+  const [minted, setMinted] = useState(false)
 
   useEffect(() => {
     const initContract = async () => {
-      const browserProvider =
-        (await detectEthereumProvider()) as ExternalProvider;
+      const browserProvider = (await detectEthereumProvider()) as ExternalProvider
 
       if (browserProvider?.isMetaMask !== true) {
         setError(
           <>
-            We were not able to detect <strong>MetaMask</strong>. We value{" "}
+            We were not able to detect <strong>MetaMask</strong>. We value{' '}
             <strong>privacy and security</strong> a lot so we limit the wallet
             options on the DAPP.
             <br />
             <br />
             But don&apos;t worry! <span className="emoji">😃</span> You can
-            always interact with the smart-contract through{" "}
+            always interact with the smart-contract through{' '}
             <a href={generateContractUrl()} target="_blank" rel="noreferrer">
               {contractInfo.networkConfig.blockExplorer.name}
-            </a>{" "}
-            and{" "}
+            </a>{' '}
+            and{' '}
             <strong>
               we do our best to provide you with the best user experience
               possible
@@ -94,93 +92,93 @@ const Mint = () => {
             <br />
             You can also get your <strong>Whitelist Proof</strong> manually,
             using the tool below.
-          </>
-        );
+          </>,
+        )
       }
 
       if (browserProvider && !provider) {
-        setProvider(new ethers.providers.Web3Provider(browserProvider));
-        registerWalletEvents(browserProvider);
-        await initWallet();
+        setProvider(new ethers.providers.Web3Provider(browserProvider))
+        registerWalletEvents(browserProvider)
+        await initWallet()
       }
-    };
+    }
 
-    initContract();
-  }, [provider]);
+    initContract()
+  }, [provider])
 
   const mintTokens = async (amount: number): Promise<void> => {
     if (!contract) {
-      return;
+      return
     }
 
-    setMining(true);
+    setMining(true)
 
     try {
       const txn = await contract.mint(amount, {
         value: contractInfo.tokenPrice.mul(amount),
-      });
-      await txn.wait();
+      })
+      await txn.wait()
 
-      refreshContractInfo();
+      refreshContractInfo()
 
-      setMining(false);
-      setMinted(true);
+      setMining(false)
+      setMinted(true)
 
       setTimeout(() => {
-        setMinted(false);
-      }, 7000);
+        setMinted(false)
+      }, 7000)
     } catch (e) {
-      setError(e);
+      setError(e)
     }
-  };
+  }
 
   const generateContractUrl = (): string => {
     return contractInfo.networkConfig.blockExplorer.generateContractUrl(
-      CollectionConfig.contractAddress!
-    );
-  };
+      CollectionConfig.contractAddress!,
+    )
+  }
 
   const generateMarketplaceUrl = (): string => {
     return CollectionConfig.marketplaceConfig.generateCollectionUrl(
       CollectionConfig.marketplaceIdentifier,
-      !isNotMainnet()
-    );
-  };
+      !isNotMainnet(),
+    )
+  }
 
   const connectWallet = async (): Promise<void> => {
     try {
-      await provider?.provider.request!({ method: "eth_requestAccounts" });
+      await provider?.provider.request!({ method: 'eth_requestAccounts' })
 
-      initWallet();
+      initWallet()
     } catch (e) {
       // setError(e);
     }
-  };
+  }
 
   const initWallet = async (): Promise<void> => {
     if (!provider) {
-      return;
+      return
     }
 
-    const walletAccounts = await provider.listAccounts();
+    const walletAccounts = await provider.listAccounts()
 
-    setContractInfo(defaultState);
+    setContractInfo(defaultState)
 
     if (walletAccounts?.length === 0) {
-      return;
+      return
     }
 
-    const network = await provider.getNetwork();
-    let networkConfig: NetworkConfigInterface;
+    const network = await provider.getNetwork()
+    let networkConfig: NetworkConfigInterface
 
     if (network.chainId === CollectionConfig.mainnet.chainId) {
-      networkConfig = CollectionConfig.mainnet;
+      networkConfig = CollectionConfig.mainnet
     } else if (network.chainId === CollectionConfig.testnet.chainId) {
-      networkConfig = CollectionConfig.testnet;
+      networkConfig = CollectionConfig.testnet
     } else {
-      setError("Unsupported network!");
+      setError('Unsupported network!')
 
-      return;
+      return
     }
 
     setContractInfo((prevState) => {
@@ -191,29 +189,29 @@ const Mint = () => {
           network,
           networkConfig,
         },
-      };
-    });
+      }
+    })
 
     if (!CollectionConfig.contractAddress) {
-      return;
+      return
     }
 
-    if ((await provider.getCode(CollectionConfig.contractAddress!)) === "0x") {
+    if ((await provider.getCode(CollectionConfig.contractAddress!)) === '0x') {
       setError(
-        "Could not find the contract, are you connected to the right chain?"
-      );
+        'Could not find the contract, are you connected to the right chain?',
+      )
 
-      return;
+      return
     }
 
     // @ts-ignore
     const contractInstance = new ethers.Contract(
       CollectionConfig.contractAddress!,
       ContractAbi,
-      provider.getSigner()
-    ) as NftContractType;
+      provider.getSigner(),
+    ) as NftContractType
 
-    setContract(contractInstance);
+    setContract(contractInstance)
 
     const contractInfoUpdated = {
       maxSupply: (await contractInstance.maxSupply()).toNumber(),
@@ -225,19 +223,19 @@ const Mint = () => {
       isPaused: await contractInstance.paused(),
       isWhitelistMintEnabled: await contractInstance.whitelistMintEnabled(),
       // isUserInWhitelist: Whitelist.contains(state.userAddress ?? ""),
-    };
+    }
 
     setContractInfo((prevState) => {
       return {
         ...prevState,
         ...contractInfoUpdated,
-      };
-    });
-  };
+      }
+    })
+  }
 
   const refreshContractInfo = async (): Promise<void> => {
     if (!contract) {
-      return;
+      return
     }
 
     const contractInfoUpdated = {
@@ -247,67 +245,67 @@ const Mint = () => {
       tokenPrice: await contract.cost(),
       isPaused: await contract.paused(),
       isWhitelistMintEnabled: await contract.whitelistMintEnabled(),
-    };
+    }
 
     setContractInfo((prevState) => {
       return {
         ...prevState,
         ...contractInfoUpdated,
-      };
-    });
-  };
+      }
+    })
+  }
 
   const isNotMainnet = (): boolean => {
     return (
       contractInfo.network !== null &&
       contractInfo.network.chainId !== CollectionConfig.mainnet.chainId
-    );
-  };
+    )
+  }
 
   const isSoldOut = (): boolean => {
     return (
       contractInfo.maxSupply !== 0 &&
       contractInfo.totalSupply < contractInfo.maxSupply
-    );
-  };
+    )
+  }
 
   const isContractReady = (): boolean => {
-    return contract !== undefined;
-  };
+    return contract !== undefined
+  }
 
   const isWalletConnected = (): boolean => {
-    return contractInfo.userAddress !== null;
-  };
+    return contractInfo.userAddress !== null
+  }
 
   const registerWalletEvents = (browserProvider: ExternalProvider): void => {
     // @ts-ignore
-    browserProvider.on("accountsChanged", () => {
-      initWallet();
-    });
+    browserProvider.on('accountsChanged', () => {
+      initWallet()
+    })
 
     // @ts-ignore
-    browserProvider.on("chainChanged", () => {
-      window.location.reload();
-    });
-  };
+    browserProvider.on('chainChanged', () => {
+      window.location.reload()
+    })
+  }
 
   const setError = (error: any = null): void => {
-    let errorMessage = "Unknown error...";
+    let errorMessage = 'Unknown error...'
 
-    if (null === error || typeof error === "string") {
-      errorMessage = error;
-    } else if (typeof error === "object") {
+    if (null === error || typeof error === 'string') {
+      errorMessage = error
+    } else if (typeof error === 'object') {
       // Support any type of error from the Web3 Provider...
       if (error?.error?.message !== undefined) {
-        errorMessage = error.error.message;
+        errorMessage = error.error.message
       } else if (error?.data?.message !== undefined) {
-        errorMessage = error.data.message;
+        errorMessage = error.data.message
       } else if (error?.message !== undefined) {
-        errorMessage = error.message;
+        errorMessage = error.message
       } else if (React.isValidElement(error)) {
-        setErrorState({ errorMessage: error });
+        setErrorState({ errorMessage: error })
 
-        return;
+        return
       }
     }
 
@@ -316,8 +314,20 @@ const Mint = () => {
         null === errorMessage
           ? null
           : errorMessage.charAt(0).toUpperCase() + errorMessage.slice(1),
-    });
-  };
+    })
+  }
+
+  const renderer = ({ completed }: { completed: any }) => {
+    if (completed) {
+      return <button onClick={connectWallet}>Connect Wallet</button>
+    } else {
+      return (
+        <button disabled className="disabled-button">
+          Mint Soon
+        </button>
+      )
+    }
+  }
 
   return (
     <div className="mint">
@@ -410,8 +420,11 @@ const Mint = () => {
 
             {!isWalletConnected() && !isSoldOut() ? (
               <div className="wallet-connect">
-                <button disabled className="disabled-button">Mint Soon</button>
-                <button onClick={() => mintTokens}>Mint Soon</button>
+                <Countdown
+                  date={new Date('2022-04-02T21:00:00')}
+                  renderer={renderer}
+                  daysInHours={false}
+                />
               </div>
             ) : null}
 
@@ -481,12 +494,12 @@ const Mint = () => {
       </div>
       {minted && <ConfettiWidget />}
     </div>
-  );
-};
+  )
+}
 
 const ConfettiWidget = () => {
-  const { width, height } = useWindowSize();
-  return <Confetti width={width} height={height} />;
-};
+  const { width, height } = useWindowSize()
+  return <Confetti width={width} height={height} />
+}
 
-export default Mint;
+export default Mint
