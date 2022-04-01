@@ -1,6 +1,8 @@
 import { Menu, Transition } from '@headlessui/react'
-import Countdown from 'react-countdown'
 import { Fragment } from 'react'
+import Countdown from 'react-countdown'
+//@ts-ignore
+import { Link } from 'react-scroll'
 import {
   Discord,
   Discord2,
@@ -8,9 +10,8 @@ import {
   LandingUnite,
   Logo,
   Medium,
-  Twitter,
+  Twitter
 } from './images'
-import { Link } from 'react-scroll'
 
 function Landing() {
   const launchDate = new Date('2022-04-02T21:00:00')
@@ -123,7 +124,6 @@ function Landing() {
                               to="about"
                               spy={true}
                               smooth={true}
-                              offset={-70}
                               duration={500}
                             >
                               about
@@ -134,7 +134,6 @@ function Landing() {
                               to="manifesto"
                               spy={true}
                               smooth={true}
-                              offset={-70}
                               duration={500}
                             >
                               manifesto
@@ -145,7 +144,6 @@ function Landing() {
                               to="team"
                               spy={true}
                               smooth={true}
-                              offset={-70}
                               duration={500}
                             >
                               team
@@ -156,7 +154,6 @@ function Landing() {
                               to="metastory"
                               spy={true}
                               smooth={true}
-                              offset={-70}
                               duration={500}
                             >
                               metastory
@@ -167,7 +164,6 @@ function Landing() {
                               to="faq"
                               spy={true}
                               smooth={true}
-                              offset={-70}
                               duration={500}
                             >
                               FAQs
@@ -224,7 +220,6 @@ function Landing() {
               to="about"
               spy={true}
               smooth={true}
-              offset={-70}
               duration={500}
             >
               about
@@ -233,7 +228,6 @@ function Landing() {
               to="manifesto"
               spy={true}
               smooth={true}
-              offset={-70}
               duration={500}
             >
               manifesto
@@ -242,7 +236,6 @@ function Landing() {
               to="team"
               spy={true}
               smooth={true}
-              offset={-70}
               duration={500}
             >
               team
@@ -251,12 +244,11 @@ function Landing() {
               to="metastory"
               spy={true}
               smooth={true}
-              offset={-70}
               duration={500}
             >
               metastory
             </Link>
-            <Link to="faq" spy={true} smooth={true} offset={-70} duration={500}>
+            <Link to="faq" spy={true} smooth={true}  duration={500}>
               FAQs
             </Link>
           </nav>
