@@ -24,12 +24,7 @@ function Footer({ page }: { page: string }) {
         <Logo />
       </Link>
     ) : (
-      <Link
-        to="landing"
-        spy={true}
-        smooth={true}
-        duration={500}
-      >
+      <Link to="landing" spy={true} smooth={true} duration={500}>
         <Logo />
       </Link>
     )
@@ -70,7 +65,7 @@ function Footer({ page }: { page: string }) {
           </div>
           <p>
             Reach out & partner with us via{' '}
-            <a href="mailto:zyggodistrikt@gmail.com?subject = Let’s join forces! = Message">
+            <a href="mailto:hello@zyggodistrikt.com?subject = Let’s join forces! = Message">
               ZyggoDistrikt[at]gmail.com
             </a>
           </p>
@@ -158,7 +153,7 @@ function Footer({ page }: { page: string }) {
                   ZyggoDistrikt4UkraineNFT Smart Contract Address:
                 </p>
                 <p className="align-right">
-                  jsdkuashdkharhrgiehagkhdkahdgkhogoifddfhgkhgihdgfhdkhfghfgh
+                  0xd96780f3dc4bf26ddea3d87153e4e2a315689c65
                 </p>
               </Dialog.Description>
               <div className="modal-footer">
@@ -172,7 +167,13 @@ function Footer({ page }: { page: string }) {
           <div className="logo">{footerLogo}</div>
           <p>
             VERIFIED SMART CONTRACT ADDRESS: {'\n'}
-            0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D
+            <a
+              href="https://etherscan.io/address/0xd96780f3dc4bf26ddea3d87153e4e2a315689c65"
+              rel="noreferrer"
+              target="_blank"
+            >
+              0xd96780f3dc4bf26ddea3d87153e4e2a315689c65
+            </a>
           </p>
           <span>
             powered by{' '}
