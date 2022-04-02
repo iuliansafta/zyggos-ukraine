@@ -1,21 +1,21 @@
-import { Discord, Instagram, Logo, Medium, Twitter } from './images'
-import { useRouter } from 'next/router'
-import { Dialog } from '@headlessui/react'
-import { useState } from 'react'
+import { Discord, Instagram, Logo, Medium, Twitter } from "./images";
+import { useRouter } from "next/router";
+import { Dialog } from "@headlessui/react";
+import { useState } from "react";
 //@ts-ignore
-import { Link } from 'react-scroll'
+import { Link } from "react-scroll";
 
 function Footer({ page }: { page: string }) {
-  const router = useRouter()
-  let [isOpen, setIsOpen] = useState(false)
+  const router = useRouter();
+  let [isOpen, setIsOpen] = useState(false);
 
   function openModal() {
-    setIsOpen(true)
+    setIsOpen(true);
   }
   const footerLogo =
-    page === 'mint' ? (
+    page === "mint" ? (
       <Link
-        onClick={() => router.push('/')}
+        onClick={() => router.push("/")}
         to="landing"
         spy={true}
         smooth={true}
@@ -27,9 +27,9 @@ function Footer({ page }: { page: string }) {
       <Link to="landing" spy={true} smooth={true} duration={500}>
         <Logo />
       </Link>
-    )
+    );
   return (
-    <div className={page === 'mint' ? 'footer footer-mint' : 'footer'}>
+    <div className={page === "mint" ? "footer footer-mint" : "footer"}>
       <div className="container">
         <div className="media">
           <h3>Follow us & spread the word via:</h3>
@@ -64,9 +64,9 @@ function Footer({ page }: { page: string }) {
             </a>
           </div>
           <p>
-            Reach out & partner with us via{' '}
+            Reach out & partner with us via{" "}
             <a href="mailto:hello@zyggodistrikt.com?subject = Let’s join forces! = Message">
-              ZyggoDistrikt[at]gmail.com
+              hello[at]zyggodistrikt.com
             </a>
           </p>
           <a className="terms" onClick={() => openModal()}>
@@ -137,7 +137,7 @@ function Footer({ page }: { page: string }) {
                   sale of Zyggo Distrikt NFT generally, provided that the
                   marketplace cryptographically verifies each Zyggo Distrikt NFT
                   Owner’s rights to display the Artwork to ensure that only the
-                  actual owner can display such Artwork;{' '}
+                  actual owner can display such Artwork;{" "}
                 </p>
                 <p>
                   ▪ Owning or operating a third-party website or application
@@ -166,7 +166,7 @@ function Footer({ page }: { page: string }) {
         <div className="verified">
           <div className="logo">{footerLogo}</div>
           <p>
-            VERIFIED SMART CONTRACT ADDRESS: {'\n'}
+            VERIFIED SMART CONTRACT ADDRESS: {"\n"}
             <a
               href="https://etherscan.io/address/0xd96780f3dc4bf26ddea3d87153e4e2a315689c65"
               rel="noreferrer"
@@ -176,15 +176,15 @@ function Footer({ page }: { page: string }) {
             </a>
           </p>
           <span>
-            powered by{' '}
+            powered by{" "}
             <a href="http://www.trilld.com/" rel="noreferrer" target="_blank">
               Trilld
-            </a>{' '}
+            </a>{" "}
           </span>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

@@ -89,7 +89,7 @@ function Landing() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default Landing;

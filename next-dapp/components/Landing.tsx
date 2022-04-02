@@ -1,7 +1,7 @@
-import { Menu, Transition } from '@headlessui/react'
-import { Fragment } from 'react'
+import { Menu, Transition } from "@headlessui/react";
+import { Fragment } from "react";
 //@ts-ignore
-import { Link } from 'react-scroll'
+import { Link } from "react-scroll";
 import {
   Discord,
   Discord2,
@@ -10,7 +10,7 @@ import {
   Logo,
   Medium,
   Twitter,
-} from './images'
+} from "./images";
 
 function Landing() {
   return (
@@ -40,7 +40,7 @@ function Landing() {
                     <div className="hamburger-button">
                       <a href="#" className="trigger">
                         <span
-                          className={`${open ? 'btn animatex' : 'btn'}`}
+                          className={`${open ? "btn animatex" : "btn"}`}
                         ></span>
                       </a>
                     </div>
@@ -247,22 +247,22 @@ function Landing() {
                 no whitelists. first come - first served
               </p>
               <p className="desc-small">
-                Join our{' '}
+                Join our{" "}
                 <a
                   href="https://twitter.com/ZyggoDistrikt"
                   rel="noreferrer"
                   target="_blank"
                 >
                   Twitter
-                </a>{' '}
-                &{' '}
+                </a>{" "}
+                &{" "}
                 <a
                   href="https://discord.com/invite/pBzznn5rs7"
                   rel="noreferrer"
                   target="_blank"
                 >
                   Discord
-                </a>{' '}
+                </a>{" "}
                 communities and be the 1st to secure a MetaHumanity Zyggo and
                 inspire others to do the same!
               </p>
@@ -286,6 +286,6 @@ function Landing() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-export default Landing
+export default Landing;
