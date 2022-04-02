@@ -374,7 +374,7 @@ describe(CollectionConfig.contractName, function () {
       this.skip();
     }
 
-    const alreadyMinted = 6;
+    const alreadyMinted = 38;
     const maxMintAmountPerTx = 1000;
     const iterations = Math.floor(
       (CollectionConfig.maxSupply - alreadyMinted) / maxMintAmountPerTx

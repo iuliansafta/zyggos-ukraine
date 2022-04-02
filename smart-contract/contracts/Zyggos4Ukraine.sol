@@ -41,7 +41,7 @@ contract Zyggos4Ukraine is ERC721A, Ownable, ReentrancyGuard {
     maxMintAmountPerTx = _maxMintAmountPerTx;
     setHiddenMetadataUri(_hiddenMetadataUri);
     
-    // Save some NFTs for team
+    // Save 11 NFTs for airdrop
     maxMintAmountOwner = _maxMintAmountOwner;
     _safeMint(owner(), _maxMintAmountOwner);
   }

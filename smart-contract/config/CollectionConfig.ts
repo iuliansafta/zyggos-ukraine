@@ -10,11 +10,11 @@ const CollectionConfig: CollectionConfigInterface = {
   // yarn rename-contract NEW_CONTRACT_NAME
   // Please DO NOT change it manually!
   contractName: "Zyggos4Ukraine",
-  tokenName: "ZyggUA",
-  tokenSymbol: "ZYGGUATEST",
+  tokenName: "Zyggos 4 Ukraine",
+  tokenSymbol: "ZYGGUA",
   hiddenMetadataUri:
     "ipfs://QmNwL837VXNN4Z8szV8Ep8frVdLW68fLUM12XiQRqBu56W/hidden.json",
-  maxSupply: 50,
+  maxSupply: 3333,
   whitelistSale: {
     price: 0.05,
     maxMintAmountPerTx: 1,
@@ -24,12 +24,12 @@ const CollectionConfig: CollectionConfigInterface = {
     maxMintAmountPerTx: 3,
   },
   publicSale: {
-    price: 0.07,
-    maxMintAmountPerTx: 3,
+    price: 0.09,
+    maxMintAmountPerTx: 11,
   },
-  maxMintOwner: 33,
-  contractAddress: "0x8cE3a6AbAF8AC6667a316B116FD26a25C32fFaA4",
-  marketplaceIdentifier: "my-token",
+  maxMintOwner: 11,
+  contractAddress: "0xd96780f3Dc4bf26DDEa3d87153e4e2a315689c65",
+  marketplaceIdentifier: "zyggos-ukraine",
   marketplaceConfig: openSea,
   whitelistAddresses: whitelistAddresses,
 };
