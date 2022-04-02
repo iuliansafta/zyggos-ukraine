@@ -6,7 +6,6 @@ import detectEthereumProvider from '@metamask/detect-provider'
 import NetworkConfigInterface from '../../smart-contract/lib/NetworkConfigInterface'
 import CollectionConfig from '../../smart-contract/config/CollectionConfig'
 import MintWidget from './MintWidget'
-import Countdown from 'react-countdown'
 
 import { LandingUnite } from './images'
 
@@ -317,18 +316,6 @@ const Mint = () => {
     })
   }
 
-  const renderer = ({ completed }: { completed: any }) => {
-    if (completed) {
-      return <button onClick={connectWallet}>Connect Wallet</button>
-    } else {
-      return (
-        <button disabled className="disabled-button">
-          Mint Soon
-        </button>
-      )
-    }
-  }
-
   return (
     <div className="mint">
       <div className="mint-hero">
@@ -420,11 +407,7 @@ const Mint = () => {
 
             {!isWalletConnected() && !isSoldOut() ? (
               <div className="wallet-connect">
-                <Countdown
-                  date={new Date('2022-04-02T21:00:00')}
-                  renderer={renderer}
-                  daysInHours={false}
-                />
+                 <button onClick={connectWallet}>Connect Wallet</button>
               </div>
             ) : null}
 
