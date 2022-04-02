@@ -72,31 +72,31 @@ function Roadmap() {
             Check out some of the wacky perks we have lined up for you.
           </p>
           <p className="small">
-            15% sales &nbsp;&nbsp;&nbsp; | gear up to offer you more, pay back
+            <b>15% sales</b>gear up to offer you more, pay back
             our NFT project loans
           </p>
           <p className="small">
-            25% sales &nbsp;&nbsp;&nbsp; | random NFT air drops to lucky Zyggo
+            <b>25% sales</b>random NFT air drops to lucky Zyggo
             owners{' '}
           </p>
           <p className="small">
-            40% sales &nbsp;&nbsp;&nbsp; | raffles, freebies and wacky rewards
+            <b>40% sales</b>raffles, freebies and wacky rewards
             for the most active members
           </p>
           <p className="small">
-            50% sales &nbsp;&nbsp;&nbsp; | activate Zyggo Transformation Room
+            <b>50% sales</b>activate Zyggo Transformation Room
             for NFT HODlers
           </p>
           <p className="small">
-            70% sales &nbsp;&nbsp;&nbsp; | launch Zyggo Distrikt virtual comic
+            <b>70% sales</b>launch Zyggo Distrikt virtual comic
             book
           </p>
           <p className="small">
-            80% sales &nbsp;&nbsp;&nbsp; | give back by sponsoring NGOs that
+            <b>80% sales</b>give back by sponsoring NGOs that
             help people with rare disorders (e.g. MMN)
           </p>
           <p className="small">
-            100% sales &nbsp;&nbsp;| reveal the identity of one Zyggo Team
+            <b>100% sales</b>reveal the identity of one Zyggo Team
             Member (by community vote), and more
           </p>
         </div>

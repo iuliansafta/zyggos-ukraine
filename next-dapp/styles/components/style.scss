@@ -650,10 +650,14 @@
     }
 
     p {
-      @apply text-grey text-2xl lg:leading-9;
+      @apply text-grey text-2xl lg:leading-9 flex items-center flex-col lg:flex-row ;
 
       &.small {
-        @apply text-lg lg:leading-7 mb-[14px];
+        @apply text-lg lg:leading-7 mb-[24px] lg:mb-[14px];
+
+        b {
+          @apply text-2xl w-[180px];
+        }
       }
 
       &.text-breaker {
