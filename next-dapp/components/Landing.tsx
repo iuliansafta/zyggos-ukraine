@@ -10,12 +10,12 @@ import {
   LandingUnite,
   Logo,
   Medium,
-  Twitter
+  Twitter,
 } from './images'
 
 function Landing() {
   const launchDate = new Date('2022-04-02T21:00:00')
-  
+
   const renderer = ({
     days,
     hours,
@@ -81,9 +81,9 @@ function Landing() {
       </div>
       <div className="sidebar">
         <div className="logo">
-          <a href="#landing">
+          <Link to="landing" spy={true} smooth={true} duration={500}>
             <Logo />
-          </a>
+          </Link>
         </div>
 
         <div className="navigation">
@@ -216,39 +216,19 @@ function Landing() {
               renderer={linkRenderer}
               daysInHours={false}
             />
-            <Link
-              to="about"
-              spy={true}
-              smooth={true}
-              duration={500}
-            >
+            <Link to="about" spy={true} smooth={true} duration={500}>
               about
             </Link>
-            <Link
-              to="manifesto"
-              spy={true}
-              smooth={true}
-              duration={500}
-            >
+            <Link to="manifesto" spy={true} smooth={true} duration={500}>
               manifesto
             </Link>
-            <Link
-              to="team"
-              spy={true}
-              smooth={true}
-              duration={500}
-            >
+            <Link to="team" spy={true} smooth={true} duration={500}>
               team
             </Link>
-            <Link
-              to="metastory"
-              spy={true}
-              smooth={true}
-              duration={500}
-            >
+            <Link to="metastory" spy={true} smooth={true} duration={500}>
               metastory
             </Link>
-            <Link to="faq" spy={true} smooth={true}  duration={500}>
+            <Link to="faq" spy={true} smooth={true} duration={500}>
               FAQs
             </Link>
           </nav>
