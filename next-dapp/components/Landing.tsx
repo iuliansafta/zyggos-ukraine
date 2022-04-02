@@ -1,6 +1,5 @@
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
-import Countdown from 'react-countdown'
 //@ts-ignore
 import { Link } from 'react-scroll'
 import {
@@ -14,60 +13,6 @@ import {
 } from './images'
 
 function Landing() {
-  const launchDate = new Date('2022-04-02T21:00:00')
-
-  const renderer = ({
-    days,
-    hours,
-    minutes,
-    completed,
-  }: {
-    days: any
-    hours: any
-    minutes: any
-    completed: any
-  }) => {
-    if (completed) {
-      return (
-        <a href="/minting" target="_blank" className="button cta mint-to-help">
-          Mint to Help
-        </a>
-      )
-    } else {
-      return (
-        <div className="countdown">
-          <p>SALE STARTS IN</p>
-          <div className="timer">
-            <div>
-              <span>{days}</span>
-              <p>DAYS</p>
-            </div>
-            <div>
-              <span>{hours}</span>
-              <p>HOURS</p>
-            </div>
-            <div>
-              <span>{minutes}</span>
-              <p>MINUTES</p>
-            </div>
-          </div>
-        </div>
-      )
-    }
-  }
-
-  const linkRenderer = ({ completed }: { completed: any }) => {
-    if (completed) {
-      return (
-        <a href="/minting" target="_blank">
-          mint
-        </a>
-      )
-    } else {
-      return null
-    }
-  }
-
   return (
     <div className="landing" id="landing">
       <div className="landing-atom">
@@ -113,11 +58,9 @@ function Landing() {
                       >
                         <Menu.Items className="dropdown-list">
                           <Menu.Item>
-                            <Countdown
-                              date={launchDate}
-                              renderer={linkRenderer}
-                              daysInHours={false}
-                            />
+                            <a href="/minting" target="_blank">
+                              mint
+                            </a>
                           </Menu.Item>
                           <Menu.Item>
                             <Link
@@ -211,11 +154,9 @@ function Landing() {
           </div>
 
           <nav className="nav-list">
-            <Countdown
-              date={launchDate}
-              renderer={linkRenderer}
-              daysInHours={false}
-            />
+            <a href="/minting" target="_blank">
+              mint
+            </a>
             <Link to="about" spy={true} smooth={true} duration={500}>
               about
             </Link>
@@ -283,11 +224,13 @@ function Landing() {
             </p>
 
             <div className="landing-cta">
-              <Countdown
-                date={launchDate}
-                renderer={renderer}
-                daysInHours={false}
-              />
+              <a
+                href="/minting"
+                target="_blank"
+                className="button cta mint-to-help"
+              >
+                Mint to Help
+              </a>
 
               <a
                 href="https://discord.com/invite/pBzznn5rs7"
