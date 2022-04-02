@@ -42,7 +42,7 @@ function Meet() {
           the Ethereum Blockchain as ERC-721 tokens (hosted on IPFS). Each
           design element embodies a high level of detail, carefully hand-drawn
           with stubborn dedication and quirkiness. The collection is very
-          limited, you can purchase only three MetaHumanity Zyggo NFTs for 0.12
+          limited, you can purchase up to eleven MetaHumanity Zyggo NFTs for 0.9
           ETH each (plus gas).
         </p>
       </div>
