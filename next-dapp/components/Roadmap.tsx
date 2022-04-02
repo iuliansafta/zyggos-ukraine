@@ -51,7 +51,7 @@ function Roadmap() {
         <div className="body">
           <div className="web-tag">roadmap</div>
           <h3>Empowering the Future of NFT Experiences</h3>
-
+          <p>We will continue to add to our roadmap over time.</p>
           <div className="roadmap-list">
             {roadmapList.map((roadmap, i) => (
               <div className="item" key={i}>
