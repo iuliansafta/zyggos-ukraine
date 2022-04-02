@@ -27,7 +27,7 @@
     @apply 2xl:mt-8;
 
     a {
-      @apply flex w-full justify-center;
+      @apply flex w-full justify-center cursor-pointer;
     }
 
     svg {
