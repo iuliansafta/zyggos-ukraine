@@ -2,6 +2,8 @@ import { Discord, Instagram, Logo, Medium, Twitter } from './images'
 import { useRouter } from 'next/router'
 import { Dialog } from '@headlessui/react'
 import { useState } from 'react'
+//@ts-ignore
+import { Link } from 'react-scroll'
 
 function Footer({ page }: { page: string }) {
   const router = useRouter()
@@ -10,7 +12,27 @@ function Footer({ page }: { page: string }) {
   function openModal() {
     setIsOpen(true)
   }
-
+  const footerLogo =
+    page === 'mint' ? (
+      <Link
+        onClick={() => router.push('/')}
+        to="landing"
+        spy={true}
+        smooth={true}
+        duration={500}
+      >
+        <Logo />
+      </Link>
+    ) : (
+      <Link
+        to="landing"
+        spy={true}
+        smooth={true}
+        duration={500}
+      >
+        <Logo />
+      </Link>
+    )
   return (
     <div className={page === 'mint' ? 'footer footer-mint' : 'footer'}>
       <div className="container">
@@ -147,11 +169,7 @@ function Footer({ page }: { page: string }) {
           <span>© 2022 Zyggo Distrikt</span>
         </div>
         <div className="verified">
-          <div className="logo">
-            <a onClick={() => router.push('/#landing')}>
-              <Logo />
-            </a>
-          </div>
+          <div className="logo">{footerLogo}</div>
           <p>
             VERIFIED SMART CONTRACT ADDRESS: {'\n'}
             0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D
