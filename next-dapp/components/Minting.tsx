@@ -458,7 +458,7 @@ const Mint = () => {
               Each design element embodies a high level of detail, carefully
               hand-drawn with stubborn dedication and quirkiness. The collection
               is very limited, you can purchase only three MetaHumanity Zyggo
-              NFTs for 0.12 ETH each (plus gas).
+              NFTs for 0.09 ETH each (plus gas).
             </p>
           </div>
           <div className="info">
@@ -466,7 +466,7 @@ const Mint = () => {
             <ul className="mint-informations">
               <li>
                 <p>Mint Price</p>
-                <p>0.12 ETH</p>
+                <p>0.09 ETH</p>
               </li>
               <li>
                 <p>NFTs</p>
