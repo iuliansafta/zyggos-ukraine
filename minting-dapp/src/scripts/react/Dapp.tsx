@@ -275,7 +275,7 @@ export default class Dapp extends React.Component<Props, State> {
             ) : null}
 
             <div className="use-block-explorer">
-              Very limited, unconventional NFT collection that stands for
+              Limited, unconventional NFT collection that stands for
               MetaHumanity by directing all sales profits to organizations that
               support Ukrainian refugees. Instead of feeling helpless, we choose
               to try to help those in despair, with everything we’ve got! We
