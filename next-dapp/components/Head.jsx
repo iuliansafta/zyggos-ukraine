@@ -13,7 +13,7 @@ export default function IndexPage() {
         <meta property="og:url" content="http://zyggodistrikt.com/" />
         <meta
           property="og:image"
-          content="https://www.zyggodistrikt.com/images/banner.jpeg"
+          content="https://www.zyggodistrikt.com/images/twitterimage.jpg"
         />
         <meta property="og:description" content="We rise by lifting others." />
         <meta name="twitter:card" content="summary" />
@@ -21,7 +21,7 @@ export default function IndexPage() {
         <meta name="twitter:creator" content="@ZyggoDistrikt" />
         <meta
           name="twitter:image"
-          content="https://www.zyggodistrikt.com/images/banner.jpeg"
+          content="https://www.zyggodistrikt.com/images/twitterimage.jpg"
         />
         <meta name="twitter:description" content="We rise by lifting others." />
         <link
