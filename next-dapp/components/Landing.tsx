@@ -214,7 +214,7 @@ function Landing() {
           <div className="landing-description">
             <p className="web-tag">nfts for good</p>
             <p className="desc-large">
-              Very limited, unconventional NFT collection that stands for
+              Limited, unconventional NFT collection that stands for
               MetaHumanity by directing all sales profits to organizations that
               support Ukrainian refugees.
             </p>
@@ -222,7 +222,6 @@ function Landing() {
               Instead of feeling helpless, we choose to try to help those in
               despair, with what we know best. We can&apos;t do it without you.
             </p>
-
             <div className="landing-cta">
               <a
                 href="/minting"

@@ -178,7 +178,7 @@ function Footer({ page }: { page: string }) {
           <span>
             powered by{" "}
             <a href="http://www.trilld.com/" rel="noreferrer" target="_blank">
-              Trilld
+              <strong>Trilld</strong>
             </a>{" "}
           </span>
         </div>
