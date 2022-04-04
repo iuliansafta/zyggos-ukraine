@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from "next/head";
 
 export default function IndexPage() {
   return (
@@ -7,26 +7,28 @@ export default function IndexPage() {
         <title>Zyggo Distrikt</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <meta
-          name="description"
-          content="We rise by lifting others."
-        />
+        <meta name="description" content="We rise by lifting others." />
         <meta property="og:title" content="NFTS FOR GOOD" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="http://zyggodistrikt.com/" />
         <meta
           property="og:image"
-          content="httpzyggodistrikt.com/images/banner.jpg"
+          content="https://www.zyggodistrikt.com/images/banner.jpeg"
         />
+        <meta property="og:description" content="We rise by lifting others." />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@ZyggoDistrikt" />
+        <meta name="twitter:creator" content="@ZyggoDistrikt" />
         <meta
-          property="og:description"
-          content="We rise by lifting others."
+          name="twitter:image"
+          content="https://www.zyggodistrikt.com/images/banner.jpeg"
         />
+        <meta name="twitter:description" content="We rise by lifting others." />
         <link
           href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
           rel="stylesheet"
         />
       </Head>
     </div>
-  )
+  );
 }
