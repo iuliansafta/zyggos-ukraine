@@ -321,7 +321,7 @@
     }
 
     &-body {
-      @apply pl-[42px] pt-[40px];
+      @apply lg:pl-[42px] pt-[40px];
 
       .button {
         @apply inline-block mt-[30px];
