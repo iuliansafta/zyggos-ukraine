@@ -23,7 +23,7 @@ export default function IndexPage() {
           ],
         }}
         twitter={{
-          cardType: "summary",
+          cardType: "summary_large_image",
           site: "@ZyggoDistrikt",
           handle: "@ZyggoDistrikt",
         }}
