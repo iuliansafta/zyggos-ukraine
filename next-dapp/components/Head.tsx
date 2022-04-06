@@ -1,12 +1,18 @@
 import { NextSeo } from "next-seo";
 import Head from "next/head";
 
-export default function IndexPage() {
+export default function IndexPage({
+  pageTitle = "Zyggo Distrikt",
+  pageDescription = "We rise by lifting others.",
+}: {
+  pageTitle?: string;
+  pageDescription?: string;
+}) {
   return (
     <>
       <NextSeo
-        title="Zyggo Distrikt"
-        description="We rise by lifting others."
+        title={pageTitle}
+        description={pageDescription}
         canonical="https://www.canonical.ie/"
         openGraph={{
           url: "https://zyggodistrikt.com/",

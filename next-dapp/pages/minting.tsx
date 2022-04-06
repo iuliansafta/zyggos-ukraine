@@ -6,11 +6,11 @@ import Mint from "../components/Minting";
 const Minting: NextPage = () => {
   return (
     <div>
-      <IndexPage />
+      <IndexPage pageTitle="Zyggo Distrikt - Mint" />
       <Mint />
       <Footer page="mint" />
     </div>
   );
 };
 
-export default Minting
+export default Minting;
