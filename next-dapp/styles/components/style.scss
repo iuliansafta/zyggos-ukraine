@@ -3,7 +3,7 @@
   @apply flex w-full justify-between;
   @apply relative overflow-hidden;
   @apply bg-ucyellow;
-  @apply pt-[114px] pb-14 lg:pb-24 px-[20px];
+  @apply pt-[114px] md:pt-[174px] lg:pt-[114px] pb-14 lg:pb-24 px-[20px];
   @apply text-center md:text-left;
   @apply 2xl:pt-0;
 
@@ -18,20 +18,20 @@
   //sidebar
   .sidebar {
     @apply sm:w-full sm:flex-row sm:top-0 sm:left-0 bg-ucyellow/70;
-    @apply fixed flex justify-between p-4 left-0 top-0 w-full items-center;
+    @apply fixed flex justify-between p-[16px] left-0 top-0 w-full items-center;
     @apply z-[9999];
     @apply 2xl:w-[290px] 2xl:flex-col 2xl:bg-transparent;
   }
 
   .logo {
-    @apply 2xl:mt-8;
+    @apply 2xl:mt-8 sm:max-w-full;
 
     a {
       @apply flex w-full justify-center cursor-pointer;
     }
 
     svg {
-      @apply w-[100px] md:w-[180px];
+      @apply w-[100px] h-[44px] md:h-[80px] md:w-[180px];
     }
   }
 
