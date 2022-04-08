@@ -215,7 +215,7 @@ function Landing() {
             <p className="web-tag">nfts for good</p>
             <p className="desc-large">
               Very limited, unconventional NFT collection that stands for
-              MetaHumanity by directing all sales profits to organizations that
+              MetaHumanity by directing ALL sales profits to organizations that
               support Ukrainian refugees.
             </p>
             <p className="desc-small">
