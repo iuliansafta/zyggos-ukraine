@@ -13,7 +13,7 @@ export default function IndexPage({
       <NextSeo
         title={pageTitle}
         description={pageDescription}
-        canonical="https://www.canonical.ie/"
+        canonical="https://zyggodistrikt.com/"
         openGraph={{
           url: "https://zyggodistrikt.com/",
           title: "NFTS FOR GOOD",
