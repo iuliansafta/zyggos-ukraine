@@ -1050,3 +1050,17 @@
     @apply animate-spin;
   }
 }
+
+// partners
+
+.partners {
+  @apply bg-black pt-[35px] pb-[46px];
+
+  h3 {
+    @apply text-white text-center text-xs uppercase tracking-[2px] mb-[29px];
+  }
+
+  &-items {
+    @apply flex justify-center items-center gap-[50px] flex-wrap sm:flex-nowrap;
+  }
+}
